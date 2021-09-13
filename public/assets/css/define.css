@@ -1,0 +1,59 @@
+.top-bar {
+    background-color: #2d5791;
+}
+
+.header-main i {
+    color: #ffffff !important;
+}
+
+.text-dark {
+    color: #ffffff !important;
+}
+
+.text-dark:hover {
+    color: #ffffff !important;
+}
+
+.bg-dark-transparent {
+    background: white !important;
+}
+
+.desktoplogo a img {
+    width: 140px;
+}
+
+.horizontalMenu>.horizontalMenu-list>li>a {
+    color: #090909;
+}
+
+.login-icon {
+    color: #2d5791 !important;
+}
+
+.header-login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-main img {
+    width: 150px;
+    padding: 2px;
+    border: none
+}
+
+.login-area {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.register-route-text {
+    color: black !important;
+    cursor: pointer;
+}
+
+.register-route-text:hover {
+    color: black !important
+}
