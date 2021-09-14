@@ -15,7 +15,7 @@
 						<div class="row">
 							<div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
 								<div class="text-center text-white ">
-									<h1 class=""><span class="font-weight-bold">16,25,365&nbsp;</span>Offered Projects Available</h1>
+									<h1 class=""><span class="font-weight-bold">16,25,365&nbsp;</span>Offered Courses Available</h1>
 								</div>
 								<div class="search-background bg-transparent mt-5">
 									<div class="form row no-gutters ">
@@ -50,10 +50,10 @@
 		<div class="bg-white border-bottom">
 			<div class="container">
 				<div class="page-header">
-					<h4 class="page-title">Project list</h4>
+					<h4 class="page-title">Course list</h4>
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="{{route('main')}}">Home</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Project list</li>
+						<li class="breadcrumb-item active" aria-current="page">Course list</li>
 					</ol>
 				</div>
 			</div>
@@ -736,7 +736,7 @@
 						<div class="d-flex mt-0 mb-5 mb-lg-0 border bg-white p-4 box-shadow2">
 							<img class="w-8 h-8 mr-4" src="../assets/images/media/4.png" alt="img">
 							<div class="media-body">
-								<h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Best New Car</a></h4>
+								<h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Best New</a></h4>
 								<span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 20th Jun 2019</span>
 								<div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Price:</span> $245 <del>$354</del></div>
 							</div>
@@ -746,7 +746,7 @@
 						<div class="d-flex mt-0 mb-0 border bg-white p-4 box-shadow2">
 							<img class="w-8 h-8 mr-4" src="../assets/images/media/2.png" alt="img">
 							<div class="media-body">
-								<h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Fuel Effeciency Car</a></h4>
+								<h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Fuel Effeciency Redattxe</a></h4>
 								<span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 14th Aug 2019</span>
 								<div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Price:</span> $214 <del>$562</del></div>
 							</div>
