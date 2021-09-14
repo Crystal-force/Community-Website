@@ -5,14 +5,16 @@
 .header-main i {
     color: #ffffff !important;
 }
-
-.text-dark {
+.top-header-text {
+  color:white !important
+}
+/* .text-dark {
     color: #ffffff !important;
 }
 
 .text-dark:hover {
     color: #ffffff !important;
-}
+} */
 
 .bg-dark-transparent {
     background: white !important;

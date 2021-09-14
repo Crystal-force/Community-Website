@@ -10,13 +10,13 @@
         <!--Nav-->
         <nav class="horizontalMenu clearfix d-md-flex">
             <ul class="horizontalMenu-list">
-                <li aria-haspopup="true"><a href="#">Course <span class="fa fa-caret-down m-0"></span></a>
+                <li aria-haspopup="true"><a href="{{route('course')}}">Course <span class="fa fa-caret-down m-0"></span></a>
                     <div class="horizontal-megamenu clearfix car-brands">
                         <div class="container">
                             <div class="megamenu-content overflow-hidden">
                                 <div class="row">
                                     <ul class="col-lg-6 link-list">
-                                        <li class="title">Newest Course</li>
+                                        <li class="title"><span><a href = "#">Newest Course</a></span></li>
                                         <li>
                                             <div class="row">
                                                 <div class="col-xl-4 col-md-6 text-center">
@@ -54,7 +54,7 @@
                                         </li>
                                     </ul>
                                     <ul class="col-lg-6 link-list mt-3 mt-md-0 top-brands">
-                                        <li class="title">Popular Course</li>
+                                        <li class="title"><span><a href="#">Popular Course</a></span></li>
                                         <li class="mt-4">
                                             <div class="row">
                                                 <div class="col-lg col-sm-6">

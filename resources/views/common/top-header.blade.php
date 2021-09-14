@@ -8,27 +8,27 @@
                         <div class="clearfix">
                             <ul class="socials">
                                 <li>
-                                    <a class="social-icon text-dark" href="#"><i class="fa fa-facebook"></i></a>
+                                    <a class="social-icon text-dark top-header-text" href="#"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li>
-                                    <a class="social-icon text-dark" href="#"><i class="fa fa-twitter"></i></a>
+                                    <a class="social-icon text-dark top-header-text" href="#"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a class="social-icon text-dark" href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a class="social-icon text-dark top-header-text" href="#"><i class="fa fa-linkedin"></i></a>
                                 </li>
                                 <li>
-                                    <a class="social-icon text-dark" href="#"><i class="fa fa-google-plus"></i></a>
+                                    <a class="social-icon text-dark top-header-text" href="#"><i class="fa fa-google-plus"></i></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="clearfix">
                             <ul class="contact border-left">
                                 <li class="mr-5 d-lg-none">
-                                    <a href="#" class="callnumber text-dark"><span><i class="fa fa-phone mr-1"></i>:
-                                            +425 345 8765</span></a>
+                                    <a href="#" class="callnumber text-dark top-header-text"><span><i class="fa fa-phone mr-1"></i>:
+                                            +123 456 7890</span></a>
                                 </li>
                                 <li class="dropdown mr-5">
-                                    <a href="#" class="text-dark" data-toggle="dropdown"><span> Language <i
+                                    <a href="#" class="text-dark top-header-text top-header-text" data-toggle="dropdown"><span> Language <i
                                                 class="fa fa-caret-down text-muted"></i></span> </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                         <a href="#" class="dropdown-item">
@@ -50,11 +50,11 @@
                     <div class="top-bar-right">
                         <ul class="custom">
                             <li>
-                                <a href="{{ route('register') }}" class="text-dark"><i class="fa fa-user mr-1"></i>
+                                <a href="{{ route('register') }}" class="text-dark top-header-text"><i class="fa fa-user mr-1"></i>
                                     <span>Register</span></a>
                             </li>
                             <li>
-                                <a href="{{ route('login') }}" class="text-dark"><i class="fa fa-sign-in mr-1"></i>
+                                <a href="{{ route('login') }}" class="text-dark top-header-text"><i class="fa fa-sign-in mr-1"></i>
                                     <span>Login</span></a>
                             </li>
                         </ul>
