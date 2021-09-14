@@ -147,7 +147,7 @@
                         </div>
                     </div>
                 </li>
-                <li aria-haspopup="true"><a href="{{route('products')}}" class="nav-menu-list">Projects</a></li>
+                <li aria-haspopup="true"><a href="{{route('products')}}" class="nav-menu-list">Products</a></li>
                 <li aria-haspopup="true"><a href="#" class="nav-menu-list">Companies</a></li>
                 <li aria-haspopup="true"><a href="#" class="nav-menu-list">How it works</a></li>
                 <li aria-haspopup="true"><a href="#" class="nav-menu-list">Forums</a></li>
