@@ -23,7 +23,10 @@
 .desktoplogo a img {
     width: 140px;
 }
-
+.nav-menu-list {
+  color: #090909 !important;
+  font-weight: 500;
+}
 .horizontalMenu>.horizontalMenu-list>li>a {
     color: #090909;
 }
@@ -58,4 +61,8 @@
 
 .register-route-text:hover {
     color: black !important
+}
+.page-move {
+  display: flex;
+  justify-content: center;
 }

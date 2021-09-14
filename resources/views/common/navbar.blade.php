@@ -10,7 +10,7 @@
         <!--Nav-->
         <nav class="horizontalMenu clearfix d-md-flex">
             <ul class="horizontalMenu-list">
-                <li aria-haspopup="true"><a href="{{route('course')}}">Course <span class="fa fa-caret-down m-0"></span></a>
+                <li aria-haspopup="true"><a href="{{route('course')}}" class="nav-menu-list">Course <span class="fa fa-caret-down m-0"></span></a>
                     <div class="horizontal-megamenu clearfix car-brands">
                         <div class="container">
                             <div class="megamenu-content overflow-hidden">
@@ -54,7 +54,7 @@
                                         </li>
                                     </ul>
                                     <ul class="col-lg-6 link-list mt-3 mt-md-0 top-brands">
-                                        <li class="title"><span><a href="#">Popular Course</a></span></li>
+                                        <li class="title"><span><a href="#">Best Seller Course</a></span></li>
                                         <li class="mt-4">
                                             <div class="row">
                                                 <div class="col-lg col-sm-6">
@@ -147,14 +147,14 @@
                         </div>
                     </div>
                 </li>
-                <li aria-haspopup="true"><a href="#">Companies</a></li>
-                <li aria-haspopup="true"><a href="#">How it works</a></li>
-                <li aria-haspopup="true"><a href="#">Forums</a></li>
-                <li aria-haspopup="true"><a href="#">Blog<span class="horizontalarrow"></span></a></li>
+                <li aria-haspopup="true"><a href="#" class="nav-menu-list">Companies</a></li>
+                <li aria-haspopup="true"><a href="#" class="nav-menu-list">How it works</a></li>
+                <li aria-haspopup="true"><a href="#" class="nav-menu-list">Forums</a></li>
+                <li aria-haspopup="true"><a href="#" class="nav-menu-list">Blog<span class="horizontalarrow"></span></a></li>
             </ul>
             <ul class="mb-0">
                 <li aria-haspopup="true" class="mt-5 d-none d-lg-block ">
-                    <span><a class="btn btn-secondary ad-post " href="ad-posts.html"> Post Service</a></span>
+                    <span><a class="btn btn-secondary ad-post " href="#"> Post Service</a></span>
                 </li>
             </ul>
         </nav>
