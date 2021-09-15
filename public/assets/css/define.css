@@ -76,3 +76,53 @@
 .products-card-footer {
   border-bottom:solid 1px #ccc
 }
+.social-share {
+  display: flex;
+  justify-content: flex-end;
+}
+.info-text {
+  white-space: pre-wrap;
+}
+.about-area{
+  margin-top: 30px;
+}
+.about-author {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.review-rank {
+  font-size: 20px;
+  cursor: pointer;
+}
+.review-rank span{
+  font-size: 16px;
+}
+.info-join-date {
+  font-size: 12px;
+  color: #8a8585;
+  margin-top: 20px;
+}
+.about-content {
+  margin-top: 15px;
+}
+.buy-btn-area {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+.buy-btn {
+  padding: 5px 100px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.price-area {
+  margin-top: 20px;
+}
+.price-area h1 {
+  color: #333232;
+  text-align: center;
+}
+.price-area h1 span{
+  color: #058b27;
+  font-size: 16px;
+}
