@@ -20,5 +20,8 @@ Route::get('/login', 'NewAuth\LoginController@index')->name('login');
 Route::get('register', 'NewAuth\RegisterController@index')->name('register');
 
 Route::get('/course', 'CourseController@index')->name('course');
+Route::get('/course-detail', 'CourseController@coursedetail')->name('course-detail');
+
+
 Route::get('/product', 'ProductController@index')->name('products');
 

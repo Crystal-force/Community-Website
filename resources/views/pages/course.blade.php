@@ -195,6 +195,7 @@
 											</div>
 										</div>
 									</div>
+
 									<div class="tab-content">
                     <div class="tab-pane active" id="tab-11">
 											<div class="row">
@@ -203,7 +204,7 @@
 														<div class="item-card9-img">
 															<div class="arrow-ribbon bg-primary">$635.00</div>
 															<div class="item-card9-imgs">
-																<a class="link" href="#"></a>
+																<a class="link" href="{{route('course-detail')}}"></a>
 																<img src="../assets/images/media/j3.png" alt="img" class="cover-image">
 															</div>
 															<div class="item-card9-icons">
