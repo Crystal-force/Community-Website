@@ -70,3 +70,9 @@
   display: flex;
   justify-content: center;
 }
+.products-card {
+  padding:1px
+}
+.products-card-footer {
+  border-bottom:solid 1px #ccc
+}

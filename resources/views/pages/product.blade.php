@@ -27,6 +27,29 @@
 		<div class="container">
 			<hr>
 			<div class="row">
+				<div class="items-blog-tab-heading row">
+					<div class="col-12">
+						<ul class="nav items-blog-tab-menu">
+							<li class=""><a href="#tab-1" class="active show btn-pill" data-toggle="tab">Featured</a></li>
+							<li><a href="#tab-2" data-toggle="tab" class="">Course projects</a></li>
+							<li><a href="#tab-3" data-toggle="tab" class="">Highest rated</a></li>
+							<li><a href="#tab-4" data-toggle="tab" class="">Most commented</a></li>
+							<li><a href="#tab-5" data-toggle="tab" class="">Most viewed</a></li>
+							<li><a href="#tab-5" data-toggle="tab" class="">Recent</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<hr>
+			<hr>
+			<div class="row">
+				<div class="btn-list">
+					<button type="button" class="btn btn-dark"><i class="fe fe-plus mr-2"></i>Add product</button>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
 				<div class="col-lg-4 col-md-12">
 					<div class="card">
 						<div class="bg-white h-100">
@@ -44,7 +67,7 @@
 									<div class="ml-auto">
 										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
 										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
-										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-tripadvisor text-muted mr-1 "></i>50</a>
+										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
 									</div>
 								</div>
 							</div>
@@ -68,7 +91,7 @@
 									<div class="ml-auto">
 										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
 										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
-										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-tripadvisor text-muted mr-1 "></i>50</a>
+										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
 									</div>
 								</div>
 							</div>
@@ -92,7 +115,7 @@
 									<div class="ml-auto">
 										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
 										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
-										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-tripadvisor text-muted mr-1 "></i>50</a>
+										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
 									</div>
 								</div>
 							</div>
@@ -100,70 +123,119 @@
 					</div>
 				</div>
 			</div>
-
 			<hr>
 			<div class="row">
 				<div class="col-lg-3 col-md-12 col-sm-12">
-					<div class="card">
-						<div class="card-body">
-							<div class="product-item text-center">
-								<span class="badge badge-danger"> NEW </span>
-								<img src="../assets/images/media/2.png" alt="img">
+					<a href="#">
+						<div class="card">
+							<div class="card-body products-card">
+								<div class="product-item text-center">
+									<span class="badge badge-danger"> NEW </span>
+									<img src="../assets/images/media/2.png" alt="img">
+								</div>
+							</div>
+							<div class="card-footer products-card-footer">
+								<h5 class="text-center mb-0 font-weight-semibold">Sherbrooke</h5>
+								<p class="mb-0">by business name</p>
+							</div>
+							<div class="item-card9-footer d-sm-flex">
+								<div class="ml-auto">
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
+								</div>
 							</div>
 						</div>
-						<div class="card-footer">
-							<h5 class="text-center mb-0 font-weight-semibold">Sherbrooke</h5>
-						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-lg-3 col-md-12 col-sm-12">
-					<div class="card">
-						<div class="card-body">
-							<div class="product-item text-center">
-								<span class="badge badge-danger"> NEW </span>
-								<img src="../assets/images/media/2.png" alt="img">
+					<a href="#">
+						<div class="card">
+							<div class="card-body products-card">
+								<div class="product-item text-center">
+									<span class="badge badge-danger"> NEW </span>
+									<img src="../assets/images/media/2.png" alt="img">
+								</div>
+							</div>
+							<div class="card-footer products-card-footer">
+								<h5 class="text-center mb-0 font-weight-semibold">Sherbrooke</h5>
+								<p class="mb-0">by business name</p>
+							</div>
+							<div class="item-card9-footer d-sm-flex">
+								<div class="ml-auto">
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
+								</div>
 							</div>
 						</div>
-						<div class="card-footer">
-							<h5 class="text-center mb-0 font-weight-semibold">Sherbrooke</h5>
-						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-lg-3 col-md-12 col-sm-12">
-					<div class="card">
-						<div class="card-body">
-							<div class="product-item text-center">
-								<img src="../assets/images/media/3.png" alt="img">
+					<a href="#">
+						<div class="card">
+							<div class="card-body products-card">
+								<div class="product-item text-center">
+									<img src="../assets/images/media/2.png" alt="img">
+								</div>
+							</div>
+							<div class="card-footer products-card-footer">
+								<h5 class="text-center mb-0 font-weight-semibold">Sherbrooke</h5>
+								<p class="mb-0">by business name</p>
+							</div>
+							<div class="item-card9-footer d-sm-flex">
+								<div class="ml-auto">
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
+								</div>
 							</div>
 						</div>
-						<div class="card-footer">
-							<h5 class="text-center mb-0 font-weight-semibold">Dignissimos i20</h5>
-						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-lg-3 col-md-12 col-sm-12">
-					<div class="card">
-						<div class="card-body">
-							<div class="product-item text-center">
-								<img src="../assets/images/media/toys.png" alt="img">
+					<a href="#">
+						<div class="card">
+							<div class="card-body products-card">
+								<div class="product-item text-center">
+									<img src="../assets/images/media/2.png" alt="img">
+								</div>
+							</div>
+							<div class="card-footer products-card-footer">
+								<h5 class="text-center mb-0 font-weight-semibold">Sherbrooke</h5>
+								<p class="mb-0">by business name</p>
+							</div>
+							<div class="item-card9-footer d-sm-flex">
+								<div class="ml-auto">
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
+								</div>
 							</div>
 						</div>
-						<div class="card-footer">
-							<h5 class="text-center mb-0 font-weight-semibold">Harlequini Dawn</h5>
-						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-lg-3 col-md-12 col-sm-12">
-					<div class="card">
-						<div class="card-body">
-							<div class="product-item text-center">
-								<img src="../assets/images/media/lenovo-tab.jpg" alt="img">
+					<a href="#">
+						<div class="card">
+							<div class="card-body products-card">
+								<div class="product-item text-center">
+									<img src="../assets/images/media/2.png" alt="img">
+								</div>
+							</div>
+							<div class="card-footer products-card-footer">
+								<h5 class="text-center mb-0 font-weight-semibold">Sherbrooke</h5>
+								<p class="mb-0">by business name</p>
+							</div>
+							<div class="item-card9-footer d-sm-flex">
+								<div class="ml-auto">
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
+									<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
+								</div>
 							</div>
 						</div>
-						<div class="card-footer">
-							<h5 class="text-center mb-0 font-weight-semibold">Dignissimos i20</h5>
-						</div>
-					</div>
+					</a>
 				</div>
 			</div>
 			<div class="row">
