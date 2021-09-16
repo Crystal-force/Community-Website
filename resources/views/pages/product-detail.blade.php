@@ -242,21 +242,21 @@
 		<section class="sptb2 bg-white border-top">
 			<div class="container">
 				<div class="row">
-          <div class="w-100">
-            <div class="card-header">
-              <h3 class="card-title">Login or Register Commet</h3>
-            </div>
-            <div class="card-body">
-              <div class="text-wra">
-                <div class="">
-                  <div class="btn-list">
-                    <a href="#" class="btn btn-pill btn-primary">Register</a>
-                    <a href="#" class="btn btn-pill btn-info">Login</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <div class="w-100">
+                        <div class="card-header">
+                        <h3 class="card-title">Login or Register Commet</h3>
+                        </div>
+                        <div class="card-body">
+                        <div class="text-wra">
+                            <div class="">
+                            <div class="btn-list">
+                                <a href="{{route('login')}}" class="btn btn-pill btn-primary">Register</a>
+                                <a href="{{route('register')}}" class="btn btn-pill btn-info">Login</a>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</section>
