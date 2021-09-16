@@ -51,28 +51,30 @@
 			<hr>
 			<div class="row">
 				<div class="col-lg-4 col-md-12">
-					<div class="card">
-						<div class="bg-white h-100">
-							<img class="card-img-top br-tr-7 br-tl-7" src="../assets/images/media/mensjackets.png" alt="">
-						</div>
-						<div class="card-body border-top">
-							<div class="product-5">
-								<div class="product-5-rating">
-									<h4 class="font-weight-semibold mt-2 mb-0"><a href="#">Harlequin Recusandae</a></h4>
-								</div>
-								<div class="product-5-desc ml-auto ">
-									<p class="mb-2 mt-2 fs-12">by<span class="fs-12 text-muted ml-2">tesdeade</span></h4>
-								</div>
-								<div class="item-card9-footer d-sm-flex">
-									<div class="ml-auto">
-										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
-										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
-										<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
+					<a href="{{route('product-detail')}}">
+						<div class="card">
+							<div class="bg-white h-100">
+								<img class="card-img-top br-tr-7 br-tl-7" src="../assets/images/media/mensjackets.png" alt="">
+							</div>
+							<div class="card-body border-top">
+								<div class="product-5">
+									<div class="product-5-rating">
+										<h4 class="font-weight-semibold mt-2 mb-0"><a href="#">Harlequin Recusandae</a></h4>
+									</div>
+									<div class="product-5-desc ml-auto ">
+										<p class="mb-2 mt-2 fs-12">by<span class="fs-12 text-muted ml-2">tesdeade</span></h4>
+									</div>
+									<div class="item-card9-footer d-sm-flex">
+										<div class="ml-auto">
+											<a href="#" class="mr-2 mt-1 mb-1 float-left" title="message"><i class="fa fa-comment-o  mr-1 text-muted"></i> 12</a>
+											<a href="#" class="mr-2 mt-1 mb-1 float-left" title="favorites"><i class="fa fa-heart-o text-muted mr-1 "></i>450</a>
+											<a href="#" class="mr-2 mt-1 mb-1 float-left" title="visitors"><i class="fa fa-eye text-muted mr-1 "></i>50</a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-lg-4 col-md-12">
 					<div class="card">

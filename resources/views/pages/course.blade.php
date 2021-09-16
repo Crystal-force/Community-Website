@@ -208,10 +208,10 @@
 																<img src="../assets/images/media/j3.png" alt="img" class="cover-image">
 															</div>
 															<div class="item-card9-icons">
-																<a href="#" class="item-card9-icons1 wishlist active"> <i class="fa fa fa-heart-o"></i></a>
+																<a href="{{route('course-detail')}}" class="item-card9-icons1 wishlist active"> <i class="fa fa fa-heart-o"></i></a>
 															</div>
 															<div class="item-overly-trans">
-																<span><a href="#" class="bg-success">New</a></span>
+																<span><a href="{{route('course-detail')}}" class="bg-success">New</a></span>
 															</div>
 														</div>
 														<div class="card border-0 mb-0">

@@ -24,4 +24,5 @@ Route::get('/course-detail', 'CourseController@coursedetail')->name('course-deta
 
 
 Route::get('/product', 'ProductController@index')->name('products');
+Route::get('/product-detail', 'ProductController@productdetail')->name('product-detail');
 
