@@ -28,3 +28,5 @@ Route::get('/product-detail', 'ProductController@productdetail')->name('product-
 
 
 Route::get('/how-it-work', 'AboutController@index')->name('how-it-work');
+
+Route::get('/forums', 'ForumsController@index')->name('forums');

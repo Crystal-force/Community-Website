@@ -151,3 +151,18 @@
 .product-img {
     margin-bottom: 15px;
 }
+.forums-user-name {
+    color:rgb(136, 133, 133);
+}
+.forums-user-name span {
+    color:brown
+}
+.forum-comment-area {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-list a{
+    color:black;
+    font-size: 16px;
+    font-weight: 500;
+}
