@@ -15,6 +15,11 @@
                     <div class="col-lg-5 col-xl-5 col-md-6 d-block mx-auto">
                         <div class="wrapper wrapper2 login-area">
                             <form id="login" class="card-body" tabindex="500">
+                                <div class="sign-login">
+                                    <a href="{{route('main')}}" >
+                                      <img src="../assets/logo/logo_.png" alt="Barca" class="img-responsive">
+                                    </a>
+                                </div>
                                 <h3>Login</h3>
                                 <div class="mail">
                                     <input type="email" name="mail">
@@ -27,7 +32,7 @@
                                 <div class="submit">
                                     <a class="btn btn-primary btn-block" href="index.html">Login</a>
                                 </div>
-                                <p class="mb-2"><a href="#">Forgot Password</a></p>
+                                <p class="mb-2"><a href="{{route('forgot-password')}}">Forgot Password</a></p>
                                 <p class="text-dark register-route-text mb-0">Don't have account?<a
                                         href="{{ 'register' }}" class="text-primary ml-1">Sign UP</a></p>
                             </form>

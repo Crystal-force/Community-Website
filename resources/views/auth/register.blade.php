@@ -15,6 +15,11 @@
                     <div class="col-lg-5 col-xl-5 col-md-6 d-block mx-auto">
                         <div class="wrapper wrapper2 login-area">
                             <form id="Register" class="card-body" tabindex="500">
+                                <div class="sign-login">
+                                    <a href="{{route('main')}}" >
+                                    <img src="../assets/logo/logo_.png" alt="Barca" class="img-responsive">
+                                    </a>
+                                </div>
                                 <h3>Register</h3>
                                 <div class="name">
                                     <input type="text" name="name">

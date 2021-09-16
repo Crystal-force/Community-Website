@@ -79,7 +79,7 @@
                             <div class="profile-pic mb-0">
                                 <img src="../assets/images/users/male/25.jpg" class="brround avatar-xxl" alt="user">
                                 <div>
-                                    <a href="userprofile.html" class="text-dark">
+                                    <a href="#" class="text-dark">
                                         <h4 class="mt-3 mb-1 font-weight-semibold">Alicia Recio Rodríguez</h4>
                                     </a>
                                     <h6 class="text-muted font-weight-normal">Teacher</h6>
