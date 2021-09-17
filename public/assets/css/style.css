@@ -19987,7 +19987,7 @@ a.typewrite {
 	background: linear-gradient(-225deg, rgba(72, 1, 255, .7) 0, rgba(121, 24, 242, .7) 48%, rgba(172, 50, 228, .7) 100%);
 }
 .pattern-1 {
-	background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(../images/banners/profile-bg.jpg) center;
+	background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(../img/profile/profile-header.jpg) center;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	background-size: cover;

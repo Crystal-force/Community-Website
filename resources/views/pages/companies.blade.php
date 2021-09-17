@@ -95,7 +95,7 @@
 				</div>
         <div class="row">
           <div class="col-lg-4 col-md-12">
-            <a href="#" class="companies-area">
+            <a href="{{route('companies-profile')}}" class="companies-area">
               <div class="card" style="height: 100%">
                 <div class="card-body">
                   <div class="service-card text-center">

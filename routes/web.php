@@ -24,6 +24,7 @@ Route::get('/course', 'CourseController@index')->name('course');
 Route::get('/course-detail', 'CourseController@coursedetail')->name('course-detail');
 
 Route::get('/companies', 'CompaniesController@index')->name('companies');
+Route::get('/companies-profile', 'CompaniesController@companiesprofile')->name('companies-profile');
 
 Route::get('/product', 'ProductController@index')->name('products');
 Route::get('/product-detail', 'ProductController@productdetail')->name('product-detail');
