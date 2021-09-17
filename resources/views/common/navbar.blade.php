@@ -151,7 +151,7 @@
                 <li aria-haspopup="true"><a href="{{route('companies')}}" class="nav-menu-list">Companies</a></li>
                 <li aria-haspopup="true"><a href="{{route('how-it-work')}}" class="nav-menu-list">How it works</a></li>
                 <li aria-haspopup="true"><a href="{{route('forums')}}" class="nav-menu-list">Forums</a></li>
-                <li aria-haspopup="true"><a href="#" class="nav-menu-list">Blog<span class="horizontalarrow"></span></a></li>
+                <li aria-haspopup="true"><a href="{{route('blog')}}" class="nav-menu-list">Blog<span class="horizontalarrow"></span></a></li>
             </ul>
             <ul class="mb-0">
                 <li aria-haspopup="true" class="mt-5 d-none d-lg-block ">

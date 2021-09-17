@@ -106,7 +106,7 @@
 										<div class="tab-pane" id="tab-6">
 											<div class="row">
 												<div class="col-lg-3 col-md-12 col-sm-12">
-                          <a href="#">
+                          <a href="{{route('product-detail')}}">
                               <div class="card">
                                   <div class="card-body products-card">
                                       <div class="product-item text-center">
