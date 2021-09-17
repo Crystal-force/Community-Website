@@ -36,3 +36,4 @@ Route::get('/forums', 'ForumsController@index')->name('forums');
 Route::get('/forum-comment', 'ForumsController@forumcomment')->name('forum-comment');
 
 Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/blog-detail', 'BlogController@blogdetail')->name('blog-detail');
