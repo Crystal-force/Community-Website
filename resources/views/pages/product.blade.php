@@ -245,7 +245,7 @@
 					<div class="text-wrap">
 						<div class="project-more-btn">
 							<div class="btn-list">
-								<a href="#" class="btn btn-outline-primary btn-pill">Show more</a>
+								<a href="#" class="btn btn-outline-primary btn-pill show-more-btn">Show more</a>
 							</div>
 						</div>
 					</div>

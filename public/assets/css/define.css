@@ -178,3 +178,17 @@
 .sign-login {
     margin-bottom: 25px !important;
 }
+.companies-name {
+    color:black;
+}
+.companies-attribue {
+    color:rgb(136, 133, 133);
+    font-weight: 100;
+    text-align: left;
+}
+.show-more-btn {
+    color:#ea3728!important
+}
+.show-more-btn:hover {
+    color:white !important
+}

@@ -91,221 +91,101 @@
 								</div>
 							</div>
 						</div>
-						<div class="card">
-							<div class="card-body">
-								<div class="user-tabel table-responsive border-top">
-									<table class="table card-table table-bordered table-hover table-vcenter text-nowrap">
-										<tbody>
-											<tr>
-												<th ></th>
-												<th>Name</th>
-												<th>Membership Status</th>
-												<th>Member Since</th>
-												<th></th>
-											</tr>
-											<tr>
-												<td class=""><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/25.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Jane Pearson</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>December-05-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/male/9.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Jason Porter</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>December-01-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/25.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Teresa Wood</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>November-29-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/16.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Mary Butler</a></td>
-												<td><a href="#" class="badge badge-info">Paused</a></td>
-												<td>November-29-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/27.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Janice Lane</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>November-25-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/male/26.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Anthony Miller</a></td>
-												<td><a href="#" class="badge badge-info">Pasused</a></td>
-												<td>November-24-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/9.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Denise Elliott</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>November-21-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/16.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Rose Cook</a></td>
-												<td><a href="#" class="badge badge-danger">Blocked</a></td>
-												<td>November-15-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/male/17.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Terry Tucker</a></td>
-												<td><a href="#" class="badge badge-success">Active,paused</a></td>
-												<td>November-14-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/6.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Grace Knight</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>November-11-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/26.jpg" ></span></td>
-												<td><a href="userprofile.html" class="text-dark">Elizabeth Martin</a></td>
-												<td><a href="#" class="badge badge-success">Active,paused</a></td>
-												<td>November-05-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/17.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Michelle Schultz</a></td>
-												<td><a href="#" class="badge badge-danger">Blocked</a></td>
-												<td>November-01-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/21.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Crystal Austin</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>October-25-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/male/32.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Douglas Ray</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>October-24-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/12.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Teresa Reyes</a></td>
-												<td><a href="#" class="badge badge-info">Paused</a></td>
-												<td>October-22-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/4.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Emma Wade</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>October-21-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/27.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Carol Henderson</a></td>
-												<td><a href="#" class="badge badge-danger">Blocked</a></td>
-												<td>October-19-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/male/20.jpg" ></span></td>
-												<td><a href="userprofile.html" class="text-dark">Christopher Harvey</a></td>
-												<td><a href="#" class="badge badge-success">Active</a></td>
-												<td>October-17-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/female/5.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Deborah Alvarado</a></td>
-												<td><a href="#" class="badge badge-success">Active,Paused</a></td>
-												<td>October-15-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td><span class="avatar avatar-md  d-block brround cover-image" data-image-src="../assets/images/users/male/10.jpg"></span></td>
-												<td><a href="userprofile.html" class="text-dark">Gregory Hunt</a></td>
-												<td><a href="#" class="badge badge-danger">Blocked</a></td>
-												<td>October-12-2019</td>
-												<td>
-													<a href="userprofile.html" class="btn btn-purple btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-						<ul class="pagination mb-0">
-							<li class="page-item page-prev disabled">
-								<a class="page-link" href="#" tabindex="-1">Prev</a>
-							</li>
-							<li class="page-item active"><a class="page-link" href="#">1</a></li>
-							<li class="page-item"><a class="page-link" href="#">2</a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#">4</a></li>
-							<li class="page-item"><a class="page-link" href="#">5</a></li>
-							<li class="page-item page-next">
-								<a class="page-link" href="#">Next</a>
-							</li>
-						</ul>
 					</div>
 				</div>
+        <div class="row">
+          <div class="col-lg-4 col-md-12">
+            <a href="#" class="companies-area">
+              <div class="card" style="height: 100%">
+                <div class="card-body">
+                  <div class="service-card text-center">
+                    <div class="bg-purple-transparent icon-bg icon-service text-purple">
+                      <div class="team-img d-flex justify-content-center">
+                        <img src="../assets/img/users/avatar.png" class="img-thumbnail rounded-circle" alt="">
+                      </div>
+                    </div>
+                    <div class="servic-data mt-3">
+                      <a href="#"><h4 class="font-weight-semibold mb-2 companies-name">HSE Higher School of Economics</h4></a>
+                    </div>
+                    <div class="mt-4">
+                      <div class="">
+                        <p class="companies-attribue mb-1"><i class="fa fa-map  mr-1 text-muted"></i> Moscow, Russian Federation</p>
+                        <p class="companies-attribue mb-1"><i class="fa fa-user  mr-1 text-muted"></i> 18 students</p>
+                        <p class="companies-attribue mb-1"><i class="fa fa-leanpub  mr-1 text-muted"></i> 180 products published</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-12">
+            <a href="#" class="companies-area">
+              <div class="card" style="height: 100%">
+                <div class="card-body">
+                  <div class="service-card text-center">
+                    <div class="bg-purple-transparent icon-bg icon-service text-purple">
+                      <div class="team-img d-flex justify-content-center">
+                        <img src="../assets/img/users/bu_logo_1.png" class="img-thumbnail rounded-circle" alt="">
+                      </div>
+                    </div>
+                    <div class="servic-data mt-3">
+                      <a href="#"><h4 class="font-weight-semibold mb-2 companies-name">UMA Universidad de Málaga</h4></a>
+                    </div>
+                    <div class="mt-4">
+                      <div class="">
+                        <p class="companies-attribue mb-1"><i class="fa fa-map  mr-1 text-muted"></i> Moscow, Russian Federation</p>
+                        <p class="companies-attribue mb-1"><i class="fa fa-user  mr-1 text-muted"></i> 18 students</p>
+                        <p class="companies-attribue mb-1"><i class="fa fa-leanpub  mr-1 text-muted"></i> 180 products published</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-12">
+            <a href="#" class="companies-area">
+              <div class="card" style="height: 100%">
+                <div class="card-body">
+                  <div class="service-card text-center">
+                    <div class="bg-purple-transparent icon-bg icon-service text-purple">
+                      <div class="team-img d-flex justify-content-center">
+                        <img src="../assets/img/users/bu_logo_2.png" class="img-thumbnail rounded-circle" alt="">
+                      </div>
+                    </div>
+                    <div class="servic-data mt-3">
+                      <a href="#"><h4 class="font-weight-semibold mb-2 companies-name">AN Kosygin Moscow State Textile University</h4></a>
+                    </div>
+                    <div class="mt-4">
+                      <div class="">
+                        <p class="companies-attribue mb-1"><i class="fa fa-map  mr-1 text-muted"></i> Moscow, Russian Federation</p>
+                        <p class="companies-attribue mb-1"><i class="fa fa-user  mr-1 text-muted"></i> 18 students</p>
+                        <p class="companies-attribue mb-1"><i class="fa fa-leanpub  mr-1 text-muted"></i> 180 products published</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-body">
+            <div class="text-wrap">
+              <div class="project-more-btn">
+                <div class="btn-list">
+                  <a href="#" class="btn btn-outline-primary btn-pill show-more-btn">Show more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 			</div>
 		</section>
 		<!--/User-All-->
+
+    
 
 		<!-- Newsletter-->
 		<section class="sptb2 bg-white border-top">
@@ -331,48 +211,6 @@
 			</div>
 		</section>
 		<!--/Newsletter-->
-
-		<!-- Recent Post-->
-		<section class="sptb2 border-top">
-			<div class="container">
-				<h6 class="fs-18 mb-4">Latest Posts</h6>
-				<hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
-				<div class="row">
-					<div class="col-md-12 col-lg-4">
-						<div class="d-flex mt-0 mb-5 mb-lg-0 border bg-white p-4 box-shadow2">
-							<img class="w-8 h-8 mr-4" src="../assets/images/media/6.png" alt="img">
-							<div class="media-body">
-								<h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Buy a CrusaderRecusandae</a></h4>
-								<span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 13th May 2019</span>
-								<div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Price:</span> $128 <del>$218</del></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 col-lg-4">
-						<div class="d-flex mt-0 mb-5 mb-lg-0 border bg-white p-4 box-shadow2">
-							<img class="w-8 h-8 mr-4" src="../assets/images/media/4.png" alt="img">
-							<div class="media-body">
-								<h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Best New Car</a></h4>
-								<span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 20th Jun 2019</span>
-								<div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Price:</span> $245 <del>$354</del></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 col-lg-4">
-						<div class="d-flex mt-0 mb-0 border bg-white p-4 box-shadow2">
-							<img class="w-8 h-8 mr-4" src="../assets/images/media/2.png" alt="img">
-							<div class="media-body">
-								<h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Fuel Effeciency Car</a></h4>
-								<span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 14th Aug 2019</span>
-								<div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Price:</span> $214 <del>$562</del></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/Recent Post-->
-    
 
 		<!--Footer Section-->
 		@include('common.footer')
