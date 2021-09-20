@@ -155,7 +155,7 @@
             </ul>
             <ul class="mb-0">
                 <li aria-haspopup="true" class="mt-5 d-none d-lg-block ">
-                    <span><a class="btn btn-secondary ad-post " href="#"> Post Service</a></span>
+                    <span><a class="btn btn-secondary ad-post " href="{{route('post-service')}}"> Post Service</a></span>
                 </li>
             </ul>
         </nav>

@@ -30,7 +30,7 @@
                                     <label>Password</label>
                                 </div>
                                 <div class="submit">
-                                    <a class="btn btn-primary btn-block" href="index.html">Login</a>
+                                    <a class="btn btn-primary btn-block" href="#">Login</a>
                                 </div>
                                 <p class="mb-2"><a href="{{route('forgot-password')}}">Forgot Password</a></p>
                                 <p class="text-dark register-route-text mb-0">Don't have account?<a

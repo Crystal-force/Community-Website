@@ -13,4 +13,8 @@ class ProductController extends Controller
     public function productdetail(Request $request) {
         return view('pages\product-detail');
     }
+
+    public function newproduct(Request $request) {
+        return view('pages\new-product');
+    }
 }

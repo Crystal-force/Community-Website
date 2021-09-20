@@ -28,6 +28,7 @@ Route::get('/companies-profile', 'CompaniesController@companiesprofile')->name('
 
 Route::get('/product', 'ProductController@index')->name('products');
 Route::get('/product-detail', 'ProductController@productdetail')->name('product-detail');
+Route::get('new-product', 'ProductController@newproduct')->name('new-product');
 
 
 Route::get('/how-it-work', 'AboutController@index')->name('how-it-work');
@@ -37,3 +38,5 @@ Route::get('/forum-comment', 'ForumsController@forumcomment')->name('forum-comme
 
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog-detail', 'BlogController@blogdetail')->name('blog-detail');
+
+Route::get('/post-service', 'PostController@index')->name('post-service');
