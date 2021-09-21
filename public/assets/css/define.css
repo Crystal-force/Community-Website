@@ -192,3 +192,16 @@
 .show-more-btn:hover {
     color:white !important
 }
+.null-input {
+    color: #ea3728;
+    font-size: 12px;
+    text-align: left;
+    display:none
+}
+#warning-alert {
+    display: none;
+    font-weight: 500;
+}
+.text-center {
+    text-align: center;
+}
