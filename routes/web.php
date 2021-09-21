@@ -17,10 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('main');
 
 Route::get('/login', 'NewAuth\LoginController@index')->name('login');
+Route::post('/login', 'NewAuth\LoginController@login');
+
 Route::get('register', 'NewAuth\RegisterController@index')->name('register');
+Route::post('/register', 'NewAuth\RegisterController@register');
+
 Route::get('/forgot-password', 'NewAuth\ForgotController@index')->name('forgot-password');
 
-Route::post('/register', 'NewAuth\RegisterController@register');
 
 Route::get('/course', 'CourseController@index')->name('course');
 Route::get('/course-detail', 'CourseController@coursedetail')->name('course-detail');
@@ -42,3 +45,7 @@ Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog-detail', 'BlogController@blogdetail')->name('blog-detail');
 
 Route::get('/post-service', 'PostController@index')->name('post-service');
+
+Route::middleware(['auth', 'HtmlMinifier'])->group(function(){
+  Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
+});

@@ -29,17 +29,17 @@
                                 <div class="name">
                                     <input type="text" name="name" id="user_name" required>
                                     <label>Name</label>
-                                    <p class="null-input" id="name_error">incorrect user name</p>
+                                    <p class="null-input" id="name_error">Incorrect user name</p>
                                 </div>
                                 <div class="mail">
                                     <input type="email" name="mail" id="user_email" required>
                                     <label>Mail</label>
-                                    <p class="null-input" id="email_error">incorrect email</p>
+                                    <p class="null-input" id="email_error">Incorrect email</p>
                                 </div>
                                 <div class="passwd">
                                     <input type="password" name="password" id="user_password" required>
                                     <label>Password</label>
-                                    <p class="null-input" id="pwd_error">incorrect password</p>
+                                    <p class="null-input" id="pwd_error">Incorrect password</p>
                                 </div>
                                 <div class="submit">
                                     <a class="btn btn-primary btn-block" href="javascript:;" onclick="UserRegister()">Register</a>
@@ -159,7 +159,7 @@
                 dataType: false,
                 success: function(data) {
                     if(data.data == "1") {
-                        window.location.href = "main"
+                        window.location.href = "/dashboard"
                     }
                     else if(data.data == "0") {
                         $("#warning-alert").delay(5).fadeIn('slow').delay(1500).fadeOut('slow');

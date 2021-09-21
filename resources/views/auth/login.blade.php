@@ -22,15 +22,17 @@
                                 </div>
                                 <h3>Login</h3>
                                 <div class="mail">
-                                    <input type="email" name="mail">
+                                    <input type="email" name="mail" id="login_email">
                                     <label>Mail or Username</label>
+                                    <p class="null-input" id="email_error">Incorrect email</p>
                                 </div>
                                 <div class="passwd">
-                                    <input type="password" name="password">
+                                    <input type="password" name="password" id="login_pwd">
                                     <label>Password</label>
+                                    <p class="null-input" id="pwd_error">Incorrect password</p>
                                 </div>
                                 <div class="submit">
-                                    <a class="btn btn-primary btn-block" href="#">Login</a>
+                                    <a class="btn btn-primary btn-block" href="javascript:;" onclick="UserLogin()">Login</a>
                                 </div>
                                 <p class="mb-2"><a href="{{route('forgot-password')}}">Forgot Password</a></p>
                                 <p class="text-dark register-route-text mb-0">Don't have account?<a
@@ -93,7 +95,50 @@
     <!--Footer Section-->
     @include('common.footer')
     <!--Footer Section-->
+    <script>
+        function UserLogin() {
+            let lg_email = '';
+            let lg_password = '';
 
+            lg_email = $("#login_email").val();
+            lg_password = $('#login_pwd').val();
+            
+            if(lg_email == "" && lg_password != "") {
+                $('#email_error').show();
+            }
+            else if(lg_email != "" && lg_password == "") {
+                $('#pwd_error').show();
+            }
+            else if(lg_email == "" && lg_password == "") {
+                $("#email_error").show();
+                $("#pwd_error").show();
+            }
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                url: '/login',
+                method: 'post',
+                data: {
+                    email: lg_email,
+                    password: lg_password
+                },
+                dataType: false,
+                success:function(data) {
+                    if(data.data == "1") {
+                        window.location.href = "/dashboard"
+                    }
+                    else if(data.data == "0") {
+                        window.location.href = "/login"
+                    }
+                }
+            });
+        }
+    </script>
 
     <!-- Back to top -->
     <a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>
