@@ -2,7 +2,7 @@
 @section('content')
     <!--Loader-->
     <div id="global-loader">
-        <img src="../assets/preloader/Fidget-spinner.gif" class="loader-img " alt="">
+        <img src="../assets/preloader/index.svg" class="loader-img " alt="">
     </div>
 
     @include('common.top-header')
@@ -15,7 +15,7 @@
                     <div class="col-lg-5 col-xl-5 col-md-6 d-block mx-auto">
                         <div class="alert alert-warning text-center " role="alert" id="warning-alert">
                             <i class="fa fa-exclamation mr-2" aria-hidden="true"></i> 
-                            Warning! The information already exists now!
+                            Warning! User information already exists now!
                         </div>
                         <div class="wrapper wrapper2 login-area">
                             <form id="Register" class="card-body" tabindex="500">

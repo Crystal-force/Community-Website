@@ -205,3 +205,6 @@
 .text-center {
     text-align: center;
 }
+#fault-alert {
+    display: none;
+}

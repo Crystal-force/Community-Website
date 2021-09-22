@@ -2,7 +2,7 @@
 @section('content')
     <!--Loader-->
     <div id="global-loader">
-        <img src="../assets/preloader/Fidget-spinner.gif" class="loader-img " alt="">
+        <img src="../assets/preloader/index.svg" class="loader-img " alt="">
     </div>
 
     @include('common.top-header')

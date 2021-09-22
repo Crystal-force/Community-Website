@@ -2,7 +2,7 @@
 @section('content')
 		<!--Loader-->
 		<div id="global-loader">
-			<img src="../assets/preloader/Fidget-spinner.gif" class="loader-img " alt="">
+			<img src="../assets/preloader/index.svg" class="loader-img " alt="">
 		</div>
 
 		@include('common.top-header')
@@ -54,7 +54,7 @@
 										<img src="../assets/images/png/about/employees.png" alt="img">
 									</div>
 									<div class="servic-data mt-3">
-										<h4 class="font-weight-semibold mb-2">Login/Register</h4>
+										<h4 class="font-weight-semibold mb-2">Register</h4>
 										<p class="text-muted mb-0">Nam libero tempore, cum soluta nobis est eligendi cumque facere possimus</p>
 									</div>
 								</div>

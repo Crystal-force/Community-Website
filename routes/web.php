@@ -14,16 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', 'HomeController@index')->name('main');
-
-Route::get('/login', 'NewAuth\LoginController@index')->name('login');
-Route::post('/login', 'NewAuth\LoginController@login');
-
-Route::get('register', 'NewAuth\RegisterController@index')->name('register');
-Route::post('/register', 'NewAuth\RegisterController@register');
-
-Route::get('/forgot-password', 'NewAuth\ForgotController@index')->name('forgot-password');
-
+Route::get('/', 'HomeController@index')->name('main')->middleware('guest');
 
 Route::get('/course', 'CourseController@index')->name('course');
 Route::get('/course-detail', 'CourseController@coursedetail')->name('course-detail');
@@ -46,6 +37,20 @@ Route::get('/blog-detail', 'BlogController@blogdetail')->name('blog-detail');
 
 Route::get('/post-service', 'PostController@index')->name('post-service');
 
-Route::middleware(['auth', 'HtmlMinifier'])->group(function(){
-  Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
+Route::get('/login', 'NewAuth\LoginController@index')->name('login')->middleware('guest');
+Route::post('/login', 'NewAuth\LoginController@login')->middleware('guest');;
+
+Route::get('register', 'NewAuth\RegisterController@index')->name('register');
+Route::post('/register', 'NewAuth\RegisterController@register');
+
+Route::get('/forgot-password', 'NewAuth\ForgotController@index')->name('forgot-password');
+
+
+  
+
+
+
+Route::middleware(['auth'])->group(function(){
+  Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('auth');
+  Route::get('/logout', 'NewAuth\LoginController@logout');
 });

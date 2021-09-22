@@ -2,17 +2,21 @@
 @section('content')
     <!--Loader-->
     <div id="global-loader">
-        <img src="../assets/preloader/Fidget-spinner.gif" class="loader-img " alt="">
+        <img src="../assets/preloader/index.svg" class="loader-img " alt="">
     </div>
 
     @include('common.top-header')
 
     <!--Login-Section-->
-    <section class="sptb">
+    <section class="sptb mt-5">
         <div class="container customerpage">
             <div class="row">
                 <div class="single-page">
                     <div class="col-lg-5 col-xl-5 col-md-6 d-block mx-auto">
+                        <div class="alert alert-warning text-center " role="alert" id="fault-alert">
+                            <i class="fa fa-exclamation mr-2" aria-hidden="true"></i> 
+                            Warning! User information doesn't correct now. Please confirm again!
+                        </div>
                         <div class="wrapper wrapper2 login-area">
                             <form id="login" class="card-body" tabindex="500">
                                 <div class="sign-login">
@@ -133,7 +137,7 @@
                         window.location.href = "/dashboard"
                     }
                     else if(data.data == "0") {
-                        window.location.href = "/login"
+                        $("#fault-alert").delay(5).fadeIn('slow').delay(1500).fadeOut('slow');
                     }
                 }
             });
