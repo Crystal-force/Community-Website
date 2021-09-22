@@ -208,3 +208,6 @@
 #fault-alert {
     display: none;
 }
+.lang-select span{
+    width: 100% !important;
+}

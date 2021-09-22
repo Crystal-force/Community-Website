@@ -13,12 +13,10 @@ class Authenticate extends Middleware
      * @return string|null
      */
     protected function redirectTo($request)
-    {   
-        $data = \Auth::user();
-        if ($data === null) {
-            return redirect('/login');
+    {
+        if (! $request->expectsJson()) {
+            return route('login');
         }
-        return $next($request);
     }
 
 }

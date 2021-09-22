@@ -45,12 +45,14 @@ Route::post('/register', 'NewAuth\RegisterController@register');
 
 Route::get('/forgot-password', 'NewAuth\ForgotController@index')->name('forgot-password');
 
-
+Route::get('/logout', 'NewAuth\LoginController@logout');
   
-
 
 
 Route::middleware(['auth'])->group(function(){
   Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('auth');
-  Route::get('/logout', 'NewAuth\LoginController@logout');
+  Route::prefix('dashboard')->group(function($sub_route) {
+    $sub_route->get('/edit-profile', 'CompaniesController@editprofile')->name('edit-profile');
+  });
+  
 });

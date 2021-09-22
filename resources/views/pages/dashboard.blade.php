@@ -18,7 +18,7 @@
                       <div class="top-bar-right">
                           <ul class="custom">
                               <li>
-                                  <a href="/dashboard" class="text-dark top-header-text"><i class="fa fa-user mr-1"></i>
+                                  <a href="{{route('edit-profile')}}" class="text-dark top-header-text"><i class="fa fa-user mr-1"></i>
                                       <span>{{$logged_user->name}}</span></a>
                               </li>
                               <li>
