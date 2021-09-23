@@ -17,4 +17,12 @@ class ProductController extends Controller
     public function newproduct(Request $request) {
         return view('pages\new-product');
     }
+
+    public function logged_products() {
+        return view('pages\lg-products');
+    }
+
+    public function logged_products_detail() {
+        return view('pages\lg-product-detail');
+    }
 }

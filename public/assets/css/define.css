@@ -211,3 +211,9 @@
 .lang-select span{
     width: 100% !important;
 }
+.lg-top-bar {
+    background-color: #07a30c !important;
+}
+.add-new-topic {
+    color:white !important
+}

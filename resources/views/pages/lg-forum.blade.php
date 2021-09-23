@@ -1,0 +1,192 @@
+@extends('layout.index')
+@section('content')
+		<!--Loader-->
+		<div id="global-loader">
+			<img src="../assets/preloader/index.svg" class="loader-img " alt="">
+		</div>
+
+		<div class="header-main">
+      <div class="top-bar lg-top-bar">
+          <div class="container">
+              <div class="row">
+                  @include('common.logged-top-header')
+
+                  <div class="col-xl-4 col-lg-4 col-sm-8 col-5">
+                      <div class="top-bar-right">
+                          <ul class="custom">
+                              <li>
+                                  <a href="{{route('edit-profile')}}" class="text-dark top-header-text"><i class="fa fa-user mr-1"></i>
+                                      <span>{{$logged_user->name}}</span></a>
+                              </li>
+                              <li>
+                                  <a href="#" class="text-dark top-header-text"><i class="fa fa-envelope-open-o mr-1"></i>
+                                      <span>{{$logged_user->email}}</span></a>
+                              </li>
+                              <li>
+                                  <a href="/logout" class="text-dark top-header-text"><i class="icon icon-power mr-1"></i>
+                                      <span>Logout</span></a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+      <!-- Horizontal Header -->
+      <div class="horizontal-header clearfix ">
+          <div class="container">
+              <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
+              <span class="smllogo"><img src="../assets/logo/logo_mobile.png" width="120" alt="" /></span>
+              <a href="tel:245-6325-3256" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
+          </div>
+      </div>
+      <!-- /Horizontal Header -->
+    
+      @include('common.logged-nav')
+    </div>
+
+		<!--Section-->
+		<section>
+			<div class="bannerimg cover-image bg-background3" data-image-src="../assets/images/banners/banner3.jpg">
+				<div class="header-text mb-0">
+					<div class="container">
+						<div class="text-center text-white">
+							<h1>Forums</h1>
+							<ol class="breadcrumb text-center">
+								<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
+								<li class="breadcrumb-item active text-white" aria-current="page">Forums</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/Section-->
+
+		<!--Testimonial1-->
+		<section class="sptb">
+			<div class="container">
+				<div class="row">
+					<div class="card-body">
+						<div class="text-wrap">
+							<div class="">
+								<div class="btn-list">
+									<a href="{{route('new-topic')}}" class="btn btn-dark add-new-topic"><i class="fa fa-eyedropper mr-2"></i>Add a new topic</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="d-sm-flex team-section">
+									<div class="team-img d-flex justify-content-center">
+										<img src="../assets/img/users/avatar.png" class="img-thumbnail rounded-circle" alt="">
+									</div>
+									<div class="ml-sm-5 mt-4 mt-sm-0">
+										<a href="{{route('lg-forum-comment')}}"><h4 class="font-weight-bold dark-grey-text mt-2">Tips for outline better</h4></a>
+										<p class="forums-user-name">by <span>huynhbinh234</span> at Illustration, about 24 hours ago</p>
+										<p class="font-weight-normal dark-grey-text mb-0">
+										<i class="fa fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur...</p>
+										<div class="reivews-area mt-3 forum-comment-area">
+											<div class="d-flex">
+													<ul class="d-flex mb-0">
+															<li class="mr-5"><a class="icons review-rank"><i class="icon icon-heart text-muted mr-1"></i> 56</a></li>
+															<li class="mr-5"><a class="icons review-rank"><i class="fa fa-comments-o text-muted mr-1"></i> 32 </a></li>
+													</ul>
+											</div>
+											<div class="comment-btn">
+												<div class="btn-list">
+													<a href="{{route('lg-forum-comment')}}" class="btn btn-outline-secondary"><i class="fa fa-comment-o mr-2"></i>Comment</a>
+												</div>
+											</div>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-body">
+								<div class="d-sm-flex team-section">
+									<div class="team-img d-flex justify-content-center">
+										<img src="../assets/img/users/avatar.png" class="img-thumbnail rounded-circle" alt="">
+									</div>
+									<div class="ml-sm-5 mt-4 mt-sm-0">
+										<a href="{{route('lg-forum-comment')}}"><h4 class="font-weight-bold dark-grey-text mt-2">Tips for outline better</h4></a>
+										<p class="forums-user-name">by <span>huynhbinh234</span> at Illustration, about 24 hours ago</p>
+										<p class="font-weight-normal dark-grey-text mb-0">
+										<i class="fa fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur...</p>
+										<div class="reivews-area mt-3 forum-comment-area">
+											<div class="d-flex">
+													<ul class="d-flex mb-0">
+															<li class="mr-5"><a class="icons review-rank"><i class="icon icon-heart text-muted mr-1"></i> 56</a></li>
+															<li class="mr-5"><a class="icons review-rank"><i class="fa fa-comments-o text-muted mr-1"></i> 32 </a></li>
+													</ul>
+											</div>
+											<div class="comment-btn">
+												<div class="btn-list">
+													<a href="{{route('lg-forum-comment')}}" class="btn btn-outline-secondary"><i class="fa fa-comment-o mr-2"></i>Comment</a>
+												</div>
+											</div>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-body">
+								<div class="d-sm-flex team-section">
+									<div class="team-img d-flex justify-content-center">
+										<img src="../assets/img/users/avatar.png" class="img-thumbnail rounded-circle" alt="">
+									</div>
+									<div class="ml-sm-5 mt-4 mt-sm-0">
+										<a href="{{route('lg-forum-comment')}}"><h4 class="font-weight-bold dark-grey-text mt-2">Tips for outline better</h4></a>
+										<p class="forums-user-name">by <span>huynhbinh234</span> at Illustration, about 24 hours ago</p>
+										<p class="font-weight-normal dark-grey-text mb-0">
+										<i class="fa fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur...</p>
+										<div class="reivews-area mt-3 forum-comment-area">
+											<div class="d-flex">
+													<ul class="d-flex mb-0">
+															<li class="mr-5"><a class="icons review-rank"><i class="icon icon-heart text-muted mr-1"></i> 56</a></li>
+															<li class="mr-5"><a class="icons review-rank"><i class="fa fa-comments-o text-muted mr-1"></i> 32 </a></li>
+													</ul>
+											</div>
+											<div class="comment-btn">
+												<div class="btn-list">
+													<a href="{{route('lg-forum-comment')}}" class="btn btn-outline-secondary"><i class="fa fa-comment-o mr-2"></i>Comment</a>
+												</div>
+											</div>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<ul class="pagination mb-0 d-flex justify-content-center">
+							<li class="page-item page-prev disabled">
+								<a class="page-link" href="#" tabindex="-1">Prev</a>
+							</li>
+							<li class="page-item active"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item page-next">
+								<a class="page-link" href="#">Next</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--Testimonial1-->
+
+		<!--Footer Section-->
+		@include('common.footer')
+		<!--Footer Section-->
+
+		<!-- Back to top -->
+		<a href="#top" id="back-to-top" ><i class="fa fa-rocket"></i></a>
+    
+@endsection

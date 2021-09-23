@@ -24,7 +24,7 @@ Route::get('/companies-profile', 'CompaniesController@companiesprofile')->name('
 
 Route::get('/product', 'ProductController@index')->name('products');
 Route::get('/product-detail', 'ProductController@productdetail')->name('product-detail');
-Route::get('new-product', 'ProductController@newproduct')->name('new-product');
+
 
 
 Route::get('/how-it-work', 'AboutController@index')->name('how-it-work');
@@ -35,7 +35,7 @@ Route::get('/forum-comment', 'ForumsController@forumcomment')->name('forum-comme
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog-detail', 'BlogController@blogdetail')->name('blog-detail');
 
-Route::get('/post-service', 'PostController@index')->name('post-service');
+
 
 Route::get('/login', 'NewAuth\LoginController@index')->name('login')->middleware('guest');
 Route::post('/login', 'NewAuth\LoginController@login')->middleware('guest');;
@@ -53,6 +53,16 @@ Route::middleware(['auth'])->group(function(){
   Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('auth');
   Route::prefix('dashboard')->group(function($sub_route) {
     $sub_route->get('/edit-profile', 'CompaniesController@editprofile')->name('edit-profile');
+    $sub_route->get('/post-service', 'PostController@index')->name('post-service');
+    $sub_route->get('/lg-companies', 'CompaniesController@logged_companies')->name('lg-companies');
+    $sub_route->get('/lg-companies-profile', 'CompaniesController@logged_companiesprofile')->name('lg-companies-profile');
+    $sub_route->get('/lg-course', 'CourseController@logged_course')->name('lg-course');
+    $sub_route->get('/lg-course-detail', 'CourseController@logged_coursedetail')->name('lg-course-detail');
+    $sub_route->get('/lg-products', 'ProductController@logged_products')->name('lg-products');
+    $sub_route->get('/lg-product-detail', 'ProductController@logged_products_detail')->name('lg-product-detail');
+    $sub_route->get('new-product', 'ProductController@newproduct')->name('new-product');
+    $sub_route->get('/lg-forum', 'ForumsController@logged_forum')->name('lg-forum');
+    $sub_route->get('/lg-forum-comment', 'ForumsController@logged_forum_comment')->name('lg-forum-comment');
+    $sub_route->get('/new-topic', 'ForumsController@newtopic')->name('new-topic');
   });
-  
 });

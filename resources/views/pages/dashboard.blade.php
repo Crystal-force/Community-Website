@@ -9,7 +9,7 @@
 
 
     <div class="header-main">
-      <div class="top-bar">
+      <div class="top-bar lg-top-bar">
           <div class="container">
               <div class="row">
                   @include('common.logged-top-header')
@@ -46,7 +46,7 @@
       </div>
       <!-- /Horizontal Header -->
     
-      @include('common.navbar')
+      @include('common.logged-nav')
     </div>
 
 

@@ -33,7 +33,7 @@
 						<div class="text-wrap">
 							<div class="">
 								<div class="btn-list">
-									<button type="button" class="btn btn-dark"><i class="fa fa-eyedropper mr-2"></i>Add a new topic</button>
+									<a href="{{route('login')}}" class="btn btn-dark add-new-topic"><i class="fa fa-eyedropper mr-2"></i>Add a new topic</a>
 								</div>
 							</div>
 						</div>
