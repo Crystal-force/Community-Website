@@ -41,3 +41,22 @@
       </div>
   </div>
 </div>
+
+<div class="col-xl-4 col-lg-4 col-sm-8 col-5">
+    <div class="top-bar-right">
+        <ul class="custom">
+            <li>
+                <a href="{{route('edit-profile')}}" class="text-dark top-header-text"><i class="fa fa-user mr-1"></i>
+                    <span>{{$logged_user->name}}</span></a>
+            </li>
+            <li>
+                <a href="#" class="text-dark top-header-text"><i class="fa fa-envelope-open-o mr-1"></i>
+                    <span>{{$logged_user->email}}</span></a>
+            </li>
+            <li>
+                <a href="/logout" class="text-dark top-header-text"><i class="icon icon-power mr-1"></i>
+                    <span>Logout</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
