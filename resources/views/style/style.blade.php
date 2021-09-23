@@ -20,5 +20,8 @@
 <!-- Custom scroll bar css-->
 <link href="../assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
 
+<!-- file Uploads -->
+<link href="../assets/plugins/fileuploads/css/fileupload.css" rel="stylesheet" type="text/css" />
+
 <!-- Color-Skins -->
 <link id="theme" rel="stylesheet" type="text/css" media="all" href="../assets/color-skins/color13.css" />

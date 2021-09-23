@@ -54,7 +54,14 @@
 							<div class="card-header">
 								<h3 class="card-title">Edit Course</h3>
 							</div>
+              
               <div class="card-body">
+                <div class="edit-course-btn">
+                  <div class="btn-list">
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#AddCourse"><i class="fe fe-upload mr-2"></i>Add New Course</button>
+                    <button type="button" class="btn btn-danger"><i class="fa fa-trash-o mr-2"></i>Remove All</button>
+                  </div>
+                </div>
 								<div class="ads-tabs">
 									<div class="tab-content">
 										<div class="tab-pane active table-responsive border-top userprof-tab" id="tab1">
@@ -182,12 +189,57 @@
 			</div>
 		</section>
 
+    <div class="modal fade" id="AddCourse" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="example-Modal3">Add New Course</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                  <input type="file" class="dropify" data-height="180" />
+              </div>
+              <div class="form-group edit-course-select-category">
+                <label class="form-label">Category</label>
+                <select class="form-control custom-select select2 ">
+                  <option value="0">--Select--</option>
+                  <option value="1">Vehicles</option>
+                  <option value="2">CrusaderRecusandae</option>
+                  <option value="3">Caledonia</option>
+                  <option value="4">...</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Title:</label>
+                <input type="text" class="form-control" id="recipient-name">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="form-control-label">Message:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save Course</button>
+          </div>
+        </div>
+      </div>
+    </div>
     
 
 		<!--Footer Section-->
 		@include('common.footer')
 		<!--Footer Section-->
+
     
+    <script>
+
+    </script>
 		<!-- Back to top -->
 		<a href="#top" id="back-to-top" ><i class="fa fa-rocket"></i></a>
    

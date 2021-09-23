@@ -48,6 +48,9 @@
 		<!-- Swipe Js-->
 		<script src="../assets/js/swipe.js"></script>
 
+		<!-- file uploads js -->
+		<script src="../assets/plugins/fileuploads/js/fileupload.js"></script>
+
 		<!-- Owl Carousel Js-->
 		<script src="../assets/js/owl-carousel.js"></script>
 

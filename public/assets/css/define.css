@@ -228,3 +228,13 @@
     text-align: center;
     vertical-align: middle;
 }
+.edit-course-btn {
+    padding: .5rem !important;
+    text-align: end;
+}
+.edit-course-select-category span{
+    width: 100% !important;
+}
+.edit-course-select-category span span span span b{
+    left: 100% !important;
+}
