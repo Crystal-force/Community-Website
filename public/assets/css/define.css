@@ -217,3 +217,14 @@
 .add-new-topic {
     color:white !important
 }
+.user-dashboard-icon i{
+    color:black !important
+}
+.edit-table-content tr td {
+    text-align: center;
+    vertical-align:middle
+}
+.edit-table-title {
+    text-align: center;
+    vertical-align: middle;
+}

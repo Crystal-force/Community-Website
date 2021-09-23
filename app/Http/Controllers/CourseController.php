@@ -18,7 +18,12 @@ class CourseController extends Controller
     public function logged_course() {
         return view('pages\lg-course');
     }
+
     public function logged_coursedetail() {
         return view('pages\lg-course-detail');
+    }
+
+    public function editcourse() {
+        return view('pages\edit-course');
     }
 }

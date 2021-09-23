@@ -6,29 +6,10 @@
 		</div>
 
 		<div class="header-main">
-      <div class="top-bar">
+      <div class="top-bar lg-top-bar">
           <div class="container">
               <div class="row">
                   @include('common.logged-top-header')
-
-                  <div class="col-xl-4 col-lg-4 col-sm-8 col-5">
-                      <div class="top-bar-right">
-                          <ul class="custom">
-                              <li>
-                                  <a href="{{route('edit-profile')}}" class="text-dark top-header-text"><i class="fa fa-user mr-1"></i>
-                                      <span>{{$logged_user->name}}</span></a>
-                              </li>
-                              <li>
-                                  <a href="#" class="text-dark top-header-text"><i class="fa fa-envelope-open-o mr-1"></i>
-                                      <span>{{$logged_user->email}}</span></a>
-                              </li>
-                              <li>
-                                  <a href="/logout" class="text-dark top-header-text"><i class="icon icon-power mr-1"></i>
-                                      <span>Logout</span></a>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
               </div>
           </div>
       </div>
@@ -43,107 +24,52 @@
       </div>
       <!-- /Horizontal Header -->
     
-      @include('common.navbar')
+      @include('common.logged-nav')
     </div>
 
-		<!--Breadcrumb-->
-		<section>
-			<div class="bannerimg cover-image bg-background3" data-image-src="../assets/images/banners/banner2.jpg">
-				<div class="header-text mb-0">
-					<div class="container">
-						<div class="text-center text-white ">
-							<h1 class="">Edit Profile</h1>
-							<ol class="breadcrumb text-center">
-								<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-								<li class="breadcrumb-item active text-white" aria-current="page">Edit Profile</li>
-							</ol>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/Breadcrumb-->
+		
 
-		<!--User Profile-->
-		<section class="sptb">
+    <section class="sptb mt-7">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-xl-3 col-lg-12 col-md-12">
 						<div class="card">
-							<div class="card-body pattern-1">
-								<div class="wideget-user">
-									<div class="row">
-										<div class="col-lg-12 col-md-12">
-											<div class="wideget-user-desc text-center">
-												<div class="team-img d-flex justify-content-center">
-                          <img src="../assets/img/users/bu_logo_1.png" class="img-thumbnail rounded-circle w-15" alt="">
-                        </div>
-												<div class="user-wrap wideget-user-info">
-													<a href="#" class="text-white"><h4 class="font-weight-semibold">UMA Universidad de Málaga</h4></a>
-													<div class="wideget-user-rating d-flex justify-content-center">
-														<p class="mr-1 ml-1"><i class="fa fa-map  mr-1 text-muted text-warning mr-1 text-white"></i><span class="text-white">Moscow, Russian Federation</span></p>
-														<p class="mr-1 ml-1"><i class="fa fa-user  mr-1 text-muted text-warning mr-1 text-white"></i><span class="text-white">18 students</span></p>
-														<p class="mr-1 ml-1"><i class="fa fa-leanpub  mr-1 text-muted text-warning mr-1 text-white"></i><span class="text-white">180 products published</span></p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-12 col-md-12 text-center">
-											<div class="wideget-user-info ">
-												<div class="wideget-user-icons mt-2">
-													<a href="#" class="facebook-bg mt-0"><i class="fa fa-facebook"></i></a>
-													<a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-													<a href="#" class="google-bg"><i class="fa fa-google"></i></a>
-													<a href="#" class="dribbble-bg"><i class="fa fa-dribbble"></i></a>
-												</div>
-											</div>
-										</div>
+							<div class="card-header">
+								<h3 class="card-title">My Dashboard</h3>
+							</div>
+							<div class="card-body text-center item-user border-bottom">
+								<div class="profile-pic">
+									<div class="profile-pic-img">
+										<span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
+										<img src="../assets/img/users/bu_logo_1.png" class="brround" alt="user">
 									</div>
+									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4></a>
 								</div>
 							</div>
+							@include('common\user-dashboard-left-menu')
 						</div>
 					</div>
-				</div>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="border-0">
-                  <div class="upload-img-bar content-center text-center">
-                    <img id="avatar-img" class="img-circle profile_img" src="../assets/img/users/bu_logo_1.png" width="150" alt="avatar" >
-                    <div class="upload-button-div hide">
-                        <label class="browse-button" data-toggle="tooltip">Browse...
-                            <input type="file" class="sr-only" id="input-avatar-change" name="image"
-                                  accept="image/*" style="width: 220px">
-                        </label>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="text" class="form-control" placeholder="test@test.com">
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input type="text" class="form-control" placeholder="123456">
-                  </div>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-pill btn-secondary">Change Information</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-          <div class="col-lg-8">
-            <div class="card">
+					<div class="col-xl-9 col-lg-12 col-md-12">
+						<div class="card mb-0">
+							<div class="card-header">
+								<h3 class="card-title">Edit Profile</h3>
+							</div>
               <div class="card-body">
                 <div class="border-0">
                   <form class="card">
-                    <div class="card-header">
-                      <h3 class="card-title">Edit Profile</h3>
-                    </div>
                     <div class="card-body">
                       <div class="row">
+                        <div class="col-md-12">
+                          <div class="upload-img-bar content-center text-center">
+                            <img id="avatar-img" class="img-circle profile_img" src="../assets/img/users/bu_logo_1.png" width="150" alt="avatar" >
+                            <div class="upload-button-div hide">
+                                <label class="browse-button" data-toggle="tooltip">Browse...
+                                    <input type="file" class="sr-only" id="input-avatar-change" name="image"
+                                          accept="image/*" style="width: 220px">
+                                </label>
+                            </div>
+                          </div>
+                        </div>
                         <div class="col-md-8">
                           <div class="form-group">
                             <label class="form-label">Name</label>
@@ -216,12 +142,11 @@
                   </form>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
-		<!--/User Profile-->
 
     <div class="modal fade" id="ProfileEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">

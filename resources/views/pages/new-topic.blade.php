@@ -10,7 +10,6 @@
           <div class="container">
               <div class="row">
                   @include('common.logged-top-header')
-
               </div>
           </div>
       </div>

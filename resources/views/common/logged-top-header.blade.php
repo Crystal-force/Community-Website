@@ -46,16 +46,35 @@
     <div class="top-bar-right">
         <ul class="custom">
             <li>
-                <a href="{{route('edit-profile')}}" class="text-dark top-header-text"><i class="fa fa-user mr-1"></i>
+                <a href="javascript:;" class="text-dark top-header-text"><i class="fa fa-user mr-1"></i>
                     <span>{{$logged_user->name}}</span></a>
             </li>
             <li>
-                <a href="#" class="text-dark top-header-text"><i class="fa fa-envelope-open-o mr-1"></i>
+                <a href="#" class="text-dark top-header-text"><i class="fa fa-envelope-o mr-1"></i>
                     <span>{{$logged_user->email}}</span></a>
             </li>
-            <li>
-                <a href="/logout" class="text-dark top-header-text"><i class="icon icon-power mr-1"></i>
-                    <span>Logout</span></a>
+            <li class="dropdown">
+                <a href="javascript:;" class="text-dark" data-toggle="dropdown"><i class="fa fa-home mr-1"></i><span style="color:white"> My Dashboard</span></a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                    <a href="{{route('edit-profile')}}" class="dropdown-item user-dashboard-icon">
+                        <i class="dropdown-icon icon icon-user"></i> Profile
+                    </a>
+                    <a class="dropdown-item user-dashboard-icon" href="#">
+                        <i class="dropdown-icon fa fa-laptop" ></i> Course
+                    </a>
+                    <a class="dropdown-item user-dashboard-icon" href="#">
+                        <i class="dropdown-icon fe fe-package" ></i> Product
+                    </a>
+                    <a class="dropdown-item user-dashboard-icon" href="#">
+                        <i class="dropdown-icon icon icon-people"></i> Users
+                    </a>
+                    <a href="mydash.html" class="dropdown-item user-dashboard-icon" >
+                        <i class="dropdown-icon  icon icon-settings"></i> Account Settings
+                    </a>
+                    <a class="dropdown-item user-dashboard-icon"  href="/logout">
+                        <i class="dropdown-icon icon icon-power"></i> Log out
+                    </a>
+                </div>
             </li>
         </ul>
     </div>

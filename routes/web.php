@@ -64,5 +64,6 @@ Route::middleware(['auth'])->group(function(){
     $sub_route->get('/lg-forum', 'ForumsController@logged_forum')->name('lg-forum');
     $sub_route->get('/lg-forum-comment', 'ForumsController@logged_forum_comment')->name('lg-forum-comment');
     $sub_route->get('/new-topic', 'ForumsController@newtopic')->name('new-topic');
+    $sub_route->get('/edit-course', 'CourseController@editcourse')->name('edit-course');
   });
 });
