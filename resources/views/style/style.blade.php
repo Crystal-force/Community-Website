@@ -4,6 +4,7 @@
 <!-- Dashboard Css -->
 <link href="../assets/css/style.css" rel="stylesheet" />
 <link href="../assets/css/define.css" rel="stylesheet" />
+<link href="../assets/css/cropper.css" rel="stylesheet" />
 
 <!-- Font-awesome  Css -->
 <link href="../assets/css/icons.css" rel="stylesheet" />

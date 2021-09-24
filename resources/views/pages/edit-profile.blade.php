@@ -60,8 +60,8 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="col-md-12">
-                          <div class="upload-img-bar content-center text-center">
-                            <img id="avatar-img" class="img-circle profile_img" src="../assets/img/users/bu_logo_1.png" width="150" alt="avatar" >
+                          <div class="upload-img-bar content-center text-center mb-5">
+                            <img id="avatar-img" class="img-circle profile_img img-thumbnail" src="../assets/img/users/bu_logo_1.png" width="150" alt="avatar">
                             <div class="upload-button-div hide">
                                 <label class="browse-button" data-toggle="tooltip">Browse...
                                     <input type="file" class="sr-only" id="input-avatar-change" name="image"
@@ -176,24 +176,24 @@
     <script>
       let canvas_pic;
 
-      // function toDataURL(url, callback) {
-      //     var xhr = new XMLHttpRequest();
-      //     xhr.onload = function() {
-      //         var reader = new FileReader();
-      //         reader.onloadend = function() {
-      //             callback(reader.result);
-      //         }
-      //         reader.readAsDataURL(xhr.response);
-      //     };
-      //     xhr.open('GET', url);
-      //     xhr.responseType = 'blob';
-      //     xhr.send();
-      // }
+      function toDataURL(url, callback) {
+          var xhr = new XMLHttpRequest();
+          xhr.onload = function() {
+              var reader = new FileReader();
+              reader.onloadend = function() {
+                  callback(reader.result);
+              }
+              reader.readAsDataURL(xhr.response);
+          };
+          xhr.open('GET', url);
+          xhr.responseType = 'blob';
+          xhr.send();
+      }
 
-      // toDataURL("", function(dataUrl) {
-      //     // canvas_pic = dataUrl;
-      //     // document.getElementById('avatar-img').src = canvas_pic;
-      // })
+      toDataURL("", function(dataUrl) {
+          // canvas_pic = dataUrl;
+          // document.getElementById('avatar-img').src = canvas_pic;
+      })
       window.addEventListener('DOMContentLoaded', function () {
 
           let avatar = document.getElementById('avatar-img');
@@ -212,7 +212,6 @@
 
               if (files && files.length > 0) {
                   let file = files[0];
-
                   if (URL) {
                       done(URL.createObjectURL(file));
                   } else if (FileReader) {
@@ -230,7 +229,6 @@
                   aspectRatio: 1,
                   viewMode: 1,
               });
-              console.log(cropper);
           }).on('hidden.bs.modal', function () {
               cropper.destroy();
               cropper = null;
@@ -246,6 +244,7 @@
                   });
                   avatar.src = canvas_pic.toDataURL();
                   canvas_pic = avatar.src;
+                
               }
           
           });

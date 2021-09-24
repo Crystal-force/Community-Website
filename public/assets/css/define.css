@@ -238,3 +238,25 @@
 .edit-course-select-category span span span span b{
     left: 100% !important;
 }
+
+.profile_img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.upload-img-bar {
+    background-color: #ebebeb;
+    border-radius: 6px;
+    padding-top: 1rem;
+}
+.browse-button {
+    border: solid 1px #ccc;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    background: #007fff;
+    color: white;
+    margin-top: 0.5rem;
+
+}
