@@ -25,4 +25,7 @@ class ProductController extends Controller
     public function logged_products_detail() {
         return view('pages\lg-product-detail');
     }
+    public function editproduct() {
+        return view('pages\edit-product');
+    }
 }

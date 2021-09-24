@@ -5,10 +5,10 @@
   <a href="{{route('edit-course')}}" class="d-flex  border-bottom">
     <span class="icon1 mr-3"><i class="fa fa-laptop"></i></span>Edit Course
   </a>
-  <a href="myfavorite.html" class=" d-flex border-bottom">
+  <a href="{{route('edit-product')}}" class=" d-flex border-bottom">
     <span class="icon1 mr-3"><i class="fe fe-package"></i></span> Edit Product
   </a>
-  <a href="managed.html" class="d-flex  border-bottom">
+  <a href="{{route('user-list')}}" class="d-flex  border-bottom">
     <span class="icon1 mr-3"><i class="icon icon-people"></i></span> Users Management
   </a>
   {{-- <a href="payments.html" class=" d-flex  border-bottom">

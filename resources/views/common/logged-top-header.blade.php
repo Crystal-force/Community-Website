@@ -59,13 +59,13 @@
                     <a href="{{route('edit-profile')}}" class="dropdown-item user-dashboard-icon">
                         <i class="dropdown-icon icon icon-user"></i> Profile
                     </a>
-                    <a class="dropdown-item user-dashboard-icon" href="#">
+                    <a class="dropdown-item user-dashboard-icon" href="{{route('edit-course')}}">
                         <i class="dropdown-icon fa fa-laptop" ></i> Course
                     </a>
-                    <a class="dropdown-item user-dashboard-icon" href="#">
+                    <a class="dropdown-item user-dashboard-icon" href="{{route('edit-product')}}">
                         <i class="dropdown-icon fe fe-package" ></i> Product
                     </a>
-                    <a class="dropdown-item user-dashboard-icon" href="#">
+                    <a class="dropdown-item user-dashboard-icon" href="{{route('user-list')}}">
                         <i class="dropdown-icon icon icon-people"></i> Users
                     </a>
                     <a href="mydash.html" class="dropdown-item user-dashboard-icon" >
