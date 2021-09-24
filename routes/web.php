@@ -67,5 +67,6 @@ Route::middleware(['auth'])->group(function(){
     $sub_route->get('/edit-course', 'CourseController@editcourse')->name('edit-course');
     $sub_route->get('/edit-product', 'ProductController@editproduct')->name('edit-product');
     $sub_route->get('/user-list', 'UserController@userlist')->name('user-list');
+    $sub_route->get('/account-setting', 'AccountController@accountsetting')->name('account-setting');
   });
 });

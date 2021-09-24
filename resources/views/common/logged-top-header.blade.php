@@ -68,7 +68,7 @@
                     <a class="dropdown-item user-dashboard-icon" href="{{route('user-list')}}">
                         <i class="dropdown-icon icon icon-people"></i> Users
                     </a>
-                    <a href="mydash.html" class="dropdown-item user-dashboard-icon" >
+                    <a href="{{route('account-setting')}}" class="dropdown-item user-dashboard-icon" >
                         <i class="dropdown-icon  icon icon-settings"></i> Account Settings
                     </a>
                     <a class="dropdown-item user-dashboard-icon"  href="/logout">

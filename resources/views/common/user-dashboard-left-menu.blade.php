@@ -14,7 +14,7 @@
   {{-- <a href="payments.html" class=" d-flex  border-bottom">
     <span class="icon1 mr-3"><i class="icon icon-credit-card"></i></span> Payments
   </a> --}}
-  <a href="orders.html" class="d-flex  border-bottom">
+  <a href="{{route('account-setting')}}" class="d-flex  border-bottom">
     <span class="icon1 mr-3"><i class="icon icon-settings"></i></span> Account Setting
   </a>
   <a  href="/logout" class="d-flex">
