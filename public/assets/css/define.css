@@ -253,10 +253,19 @@
 }
 .browse-button {
     border: solid 1px #ccc;
-    padding: 0.5rem 1.5rem;
+    padding: 0.3rem 1.0rem;
     border-radius: 30px;
-    background: #007fff;
+    background: #0ab2e6;
+    border:solid 1px #0ab2e6;
     color: white;
     margin-top: 0.5rem;
-
+}
+.save-button {
+    border: solid 1px #ccc;
+    padding: 0.3rem 1.5rem;
+    border-radius: 30px;
+    background: #e72a1a;
+    border:solid 1px #e72a1a;
+    color: white;
+    margin-top: 0.5rem;
 }

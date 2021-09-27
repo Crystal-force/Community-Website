@@ -52,6 +52,7 @@ Route::get('/logout', 'NewAuth\LoginController@logout');
 Route::middleware(['auth'])->group(function(){
   Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('auth');
   Route::prefix('dashboard')->group(function($sub_route) {
+    $sub_route->post('/save-avatar', 'CompaniesController@saveavatar');
     $sub_route->get('/edit-profile', 'CompaniesController@editprofile')->name('edit-profile');
     $sub_route->get('/post-service', 'PostController@index')->name('post-service');
     $sub_route->get('/lg-companies', 'CompaniesController@logged_companies')->name('lg-companies');

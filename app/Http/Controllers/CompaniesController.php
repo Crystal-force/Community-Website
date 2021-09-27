@@ -14,6 +14,13 @@ class CompaniesController extends Controller
         return view('pages\companies-profile');
     }
 
+    function saveavatar(Request $request) {
+        dd('test');
+        // dd($request);
+    }
+
+
+
     public function editprofile() {
         return view('pages\edit-profile');
     }

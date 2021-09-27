@@ -43,7 +43,7 @@
 										<span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
 										<img src="../assets/img/users/bu_logo_1.png" class="brround" alt="user">
 									</div>
-									<a href="userprofile.html" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4></a>
+									<a href="javascript:;" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4></a>
 								</div>
 							</div>
 							@include('common\user-dashboard-left-menu')
@@ -62,30 +62,32 @@
                         <div class="col-md-12">
                           <div class="upload-img-bar content-center text-center mb-5">
                             <img id="avatar-img" class="img-circle profile_img img-thumbnail" src="../assets/img/users/bu_logo_1.png" width="150" alt="avatar">
-                            <div class="upload-button-div hide">
-                                <label class="browse-button" data-toggle="tooltip">Browse...
-                                    <input type="file" class="sr-only" id="input-avatar-change" name="image"
-                                          accept="image/*" style="width: 220px">
-                                </label>
+                            <div class="d-flex justify-content-center">
+                              <div class="upload-button-div hide">
+                                  <label class="browse-button" data-toggle="tooltip"><i class="fa fa-folder-open mr-1"></i>Browse
+                                      <input type="file" class="sr-only" id="input-avatar-change" name="image"
+                                            accept="image/*" style="width: 220px">
+                                  </label>
+                              </div>
                             </div>
                           </div>
                         </div>
                         <div class="col-md-8">
                           <div class="form-group">
                             <label class="form-label">Name</label>
-                            <input type="text" class="form-control"  placeholder="name" >
+                            <input type="text" class="form-control"  placeholder="name" id="company_name">
                           </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                           <div class="form-group">
                             <label class="form-label">Phone number</label>
-                            <input type="text" class="form-control" placeholder="phone number">
+                            <input type="text" class="form-control" placeholder="phone number" id="company_phone_num">
                           </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-sm-12 col-md-12">
                           <div class="form-group ml-1">
                             <label class="form-label">Language</label>
-                            <select class="form-control select2 lang-select" data-placeholder="Choose Browser" multiple>
+                            <select class="form-control select2 lang-select" data-placeholder="Choose Browser" multiple id="company_lang">
                               <option value="English selected">
                                 English
                               </option>
@@ -101,26 +103,25 @@
                         <div class="col-sm-6 col-md-12">
                           <div class="form-group">
                             <label class="form-label">Location</label>
-                            <input type="email" class="form-control" placeholder="Location">
+                            <input type="text" class="form-control" placeholder="Location" id="company_location">
                           </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                           <div class="form-group">
                             <label class="form-label">City</label>
-                            <input type="text" class="form-control" placeholder="City" >
+                            <input type="text" class="form-control" placeholder="City" id="company_city">
                           </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
                           <div class="form-group">
                             <label class="form-label">Postal Code</label>
-                            <input type="number" class="form-control" placeholder="ZIP Code">
+                            <input type="number" class="form-control" placeholder="ZIP Code" id="company_code">
                           </div>
                         </div>
                         <div class="col-md-5">
                           <div class="form-group">
                             <label class="form-label">Country</label>
-                            <select class="form-control custom-select select2">
-                              <option value="0">--Select--</option>
+                            <select class="form-control custom-select select2" id="company_country">
                               <option value="1">Chile</option>
                               <option value="2">Canada</option>
                               <option value="3">United State</option>
@@ -131,13 +132,13 @@
                         <div class="col-md-12">
                           <div class="form-group mb-0">
                             <label class="form-label">About Me</label>
-                            <textarea rows="5" class="form-control" placeholder="Enter About your description"></textarea>
+                            <textarea rows="5" class="form-control" placeholder="Enter About your description" id="company_about"></textarea>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="card-footer text-right">
-                      <button type="submit" class="btn btn-primary">Update Profile</button>
+                      <button type="button" class="btn btn-primary" onclick="EditProfile()">Update Profile</button>
                     </div>
                   </form>
                 </div>
@@ -163,8 +164,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-info" id="crop-button">Set as Avatar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 30px">Cancel</button>
+            <button type="button" class="btn btn-info save-button" id="crop-button"><i class="fa fa-save mr-1"></i>Save</button>
         </div>
         </div>
       </div>
@@ -242,14 +243,66 @@
                       width: 220,
                       height: 220,
                   });
+               
                   avatar.src = canvas_pic.toDataURL();
                   canvas_pic = avatar.src;
-                
               }
-          
+              $.ajaxSetup({
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  }
+              });
+              $.ajax({
+                url: '/save-avatar',
+                method: 'post',
+                data: {
+                  avatar: canvas_pic
+                },
+                dataType: false,
+                success: function(data) {
+                  console.log(data);
+                }
+              });
+
           });
       });
+
+      // function SaveProfileAvatar() {
+      //   let avatar = "";
+
+      //   avatar = document.getElementById('avatar-img').src;
+      //   console.log(avatar);
+      // }
+
+
+
+
+      function EditProfile() {
+        
+        let name = "";
+        let phone = "";
+        let language = "";
+        let location = "";
+        let city = "";
+        let code = "";
+        let country = "";
+        let about = "";
+
+        name = $("#company_name").val();
+        phone = $("#company_phone_num").val();
+        language = $("#company_lang option:selected").text();
+        city = $("#company_city").val();
+        location = $("#company_location").val();
+        code = $("#company_code").val();
+        country = $("#company_country option:selected").text();
+        about = $("#company_about").val();
+        
+        
+        console.log(name, phone, language,location, city, code, country, about);
+        
+      }
     </script>
+
 		<!-- Back to top -->
 		<a href="#top" id="back-to-top" ><i class="fa fa-rocket"></i></a>
    

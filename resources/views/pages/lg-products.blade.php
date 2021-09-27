@@ -65,7 +65,7 @@
 			<hr>
 			<div class="row">
 				<div class="btn-list">
-					<a href="{{route('new-product')}}"><button type="button" class="btn btn-dark"><i class="fe fe-plus mr-2" ></i>Add product</button></a>
+					<a href="{{route('edit-product')}}"><button type="button" class="btn btn-dark"><i class="fe fe-plus mr-2" ></i>Add product</button></a>
 				</div>
 			</div>
 			<hr>
