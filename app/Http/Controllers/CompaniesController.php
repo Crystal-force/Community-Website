@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Company;
 use Illuminate\Support\Facades\Auth;
 use File;
+use app\User; 
 
 class CompaniesController extends Controller
 {
@@ -51,12 +52,69 @@ class CompaniesController extends Controller
         $user_id = Auth::id();
         $user_name = Auth::user()->name;
         $company_data = Company::where('user_id', $user_id)->first();
-        $com_avatar = $company_data->avatar;
+        
+        // if($company_data = 'null') {
+        //     $blank_avatar = '../assets/img/blank/blank.png';
+        //     return view('pages\edit-profile')->with([
+        //         'avatar' => $blank_avatar,
+        //         'name' => $user_name
+        //     ]);
+        // }
+        // else {
+            $com_avatar = $company_data->avatar;
+            return view('pages\edit-profile')->with([
+                'avatar' => $com_avatar,
+                'name' => $user_name
+            ]);
+        // }
+        
+    }
 
-        return view('pages\edit-profile')->with([
-            'avatar' => $com_avatar,
-            'name' => $user_name
+    public function updateprofile(Request $request) {
+        $name = $request->name;
+        $phone_number = $request->phone_number;
+        $language = $request->language;
+        $location = $request->location;
+        $city = $request->city;
+        $zip_code = $request->zip_code;
+        $country = $request->country;
+        $about = $request->about;
+
+        $registered_id = Auth::id();
+        $user_id = Company::where('user_id', $registered_id)->first();
+
+        if($user_id == null) {
+            $res = Company::create([
+                'name' => $name,
+                'phone_number' => $phone_number,
+                'language' => $language,
+                'location' => $location,
+                'city' => $city,
+                'zip_code' => $zip_code,
+                'country' => $country,
+                'about' => $about,
+            ]);
+        }
+        else {
+            $res = Company::where('user_id', $registered_id)->update([
+                'name' => $name,
+                'phone_number' => $phone_number,
+                'language' => $language,
+                'location' => $location,
+                'city' => $city,
+                'zip_code' => $zip_code,
+                'country' => $country,
+                'about' => $about,
+            ]);
+        }
+
+        $res = User::where('id', $registered_id)->update([
+            'name' => $name,
         ]);
+
+        if($res == 1) {
+            return response()->json(['data' => '1']);
+        }
     }
 
     public function logged_companies() {
