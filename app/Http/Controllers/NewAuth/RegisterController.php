@@ -9,6 +9,8 @@ use Validator,Redirect,Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Models\Company;
+
 
 
 class RegisterController extends Controller
@@ -26,13 +28,15 @@ class RegisterController extends Controller
         if($registered != null) {
             return response()->json(['data'=>'0']);
         }
-       
+        
         $new_user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
+
         auth()->login($new_user);
+       
         
         return response()->json(['data' => '1']);
     }

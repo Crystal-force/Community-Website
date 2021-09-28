@@ -269,3 +269,6 @@
     color: white;
     margin-top: 0.5rem;
 }
+#profile_update_success {
+    display: none;
+}

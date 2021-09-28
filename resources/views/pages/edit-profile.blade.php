@@ -1,9 +1,9 @@
 @extends('layout.index')
 @section('content')
 		<!--Loader-->
-		<div id="global-loader">
+		{{-- <div id="global-loader">
 			<img src="../assets/preloader/index.svg" class="loader-img " alt="">
-		</div>
+		</div> --}}
 
 		<div class="header-main">
       <div class="top-bar lg-top-bar">
@@ -30,21 +30,17 @@
 		
 
     <section class="sptb mt-7">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="alert alert-success" role="alert" id="profile_update_success"><i class="fa fa-check-circle-o mr-2" aria-hidden="true"></i> Well done! You successfully updated account image!</div>
+        </div>
+      </div>
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-12 col-md-12">
 						<div class="card">
 							<div class="card-header">
 								<h3 class="card-title">My Dashboard</h3>
-							</div>
-							<div class="card-body text-center item-user border-bottom">
-								<div class="profile-pic">
-									<div class="profile-pic-img">
-										<span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
-										<img src="../assets/img/users/bu_logo_1.png" class="brround" alt="user">
-									</div>
-									<a href="javascript:;" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4></a>
-								</div>
 							</div>
 							@include('common\user-dashboard-left-menu')
 						</div>
@@ -61,7 +57,7 @@
                       <div class="row">
                         <div class="col-md-12">
                           <div class="upload-img-bar content-center text-center mb-5">
-                            <img id="avatar-img" class="img-circle profile_img img-thumbnail" src="../assets/img/users/bu_logo_1.png" width="150" alt="avatar">
+                            <img id="avatar-img" class="img-circle profile_img img-thumbnail" src="{{$avatar}}" width="150" alt="avatar">
                             <div class="d-flex justify-content-center">
                               <div class="upload-button-div hide">
                                   <label class="browse-button" data-toggle="tooltip"><i class="fa fa-folder-open mr-1"></i>Browse
@@ -75,7 +71,7 @@
                         <div class="col-md-8">
                           <div class="form-group">
                             <label class="form-label">Name</label>
-                            <input type="text" class="form-control"  placeholder="name" id="company_name">
+                            <input type="text" class="form-control"  placeholder="{{$name}}" id="company_name">
                           </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
@@ -246,36 +242,29 @@
                
                   avatar.src = canvas_pic.toDataURL();
                   canvas_pic = avatar.src;
-              }
-              $.ajaxSetup({
-                  headers: {
-                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                  }
-              });
-              $.ajax({
-                url: '/save-avatar',
-                method: 'post',
-                data: {
-                  avatar: canvas_pic
-                },
-                dataType: false,
-                success: function(data) {
-                  console.log(data);
-                }
-              });
 
+                  $.ajaxSetup({
+                      headers: {
+                          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      }
+                  });
+                  $.ajax({
+                    url: '/dashboard/save-avatar',
+                    method: 'post',
+                    data: {
+                      avatar: canvas_pic,
+                    },
+                    dataType: false,
+                    success:function(data) {
+                      if(data.data == '1') {
+                        $("#profile_update_success").delay(5).fadeIn('slow').delay(1500).fadeOut('slow');
+                      }
+                    }
+                  });
+              }
+              
           });
       });
-
-      // function SaveProfileAvatar() {
-      //   let avatar = "";
-
-      //   avatar = document.getElementById('avatar-img').src;
-      //   console.log(avatar);
-      // }
-
-
-
 
       function EditProfile() {
         
@@ -291,14 +280,12 @@
         name = $("#company_name").val();
         phone = $("#company_phone_num").val();
         language = $("#company_lang option:selected").text();
-        city = $("#company_city").val();
         location = $("#company_location").val();
+        city = $("#company_city").val();
         code = $("#company_code").val();
         country = $("#company_country option:selected").text();
         about = $("#company_about").val();
         
-        
-        console.log(name, phone, language,location, city, code, country, about);
         
       }
     </script>

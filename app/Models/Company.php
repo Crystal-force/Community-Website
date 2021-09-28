@@ -8,14 +8,14 @@ class Company extends Model
 {
     public $fillable = [
         'id',
-        'user-id',
+        'user_id',
         'name',
         'avatar',
-        'phone-number',
+        'phone_number',
         'language',
         'location',
         'city',
-        'zip-code',
+        'zip_code',
         'country',
         'about',
         'students',
