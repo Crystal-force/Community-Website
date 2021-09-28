@@ -57,7 +57,9 @@
                       <div class="row">
                         <div class="col-md-12">
                           <div class="upload-img-bar content-center text-center mb-5">
+                            
                             <img id="avatar-img" class="img-circle profile_img img-thumbnail" src="{{$avatar}}" width="150" alt="avatar">
+                           
                             <div class="d-flex justify-content-center">
                               <div class="upload-button-div hide">
                                   <label class="browse-button" data-toggle="tooltip"><i class="fa fa-folder-open mr-1"></i>Browse
@@ -286,7 +288,31 @@
         country = $("#company_country option:selected").text();
         about = $("#company_about").val();
         
-        
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+          url: '/dashboard/update-profile',
+          method: 'post',
+          data: {
+            name: name,
+            phone_number: phone,
+            language: language,
+            location: location,
+            city: city,
+            zip_code: code,
+            country: country,
+            about: about
+          },
+          dataType: false,
+          success: function(data) {
+            if(data.data == "1") {
+              $("#profile_update_success").delay(5).fadeIn('slow').delay(1500).fadeOut('slow');
+            }
+          }
+        });
       }
     </script>
 

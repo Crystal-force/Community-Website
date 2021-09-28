@@ -54,6 +54,7 @@ Route::middleware(['auth'])->group(function(){
   Route::prefix('dashboard')->group(function($sub_route) {
     $sub_route->post('/save-avatar', 'CompaniesController@saveavatar');
     $sub_route->get('/edit-profile', 'CompaniesController@editprofile')->name('edit-profile');
+    $sub_route->post('/update-profile', 'CompaniesController@updateprofile');
     $sub_route->get('/post-service', 'PostController@index')->name('post-service');
     $sub_route->get('/lg-companies', 'CompaniesController@logged_companies')->name('lg-companies');
     $sub_route->get('/lg-companies-profile', 'CompaniesController@logged_companiesprofile')->name('lg-companies-profile');
