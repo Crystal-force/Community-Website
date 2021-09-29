@@ -17,6 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->id();
             $table->string('user_id')->nullable();
             $table->string('avatar')->nullable();
+            $table->string('jobs')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('language')->nullable();
             $table->string('location')->nullable();
@@ -25,6 +26,10 @@ class CreateCompaniesTable extends Migration
             $table->string('country')->nullable();
             $table->string('about')->nullable();
             $table->integer('students')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
             $table->timestamps();
         });
     }

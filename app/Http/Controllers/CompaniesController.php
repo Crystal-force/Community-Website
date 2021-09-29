@@ -64,18 +64,24 @@ class CompaniesController extends Controller
         $avatar = '../assets/img/blank/blank.png';
         $id = '';
         $name = '';
+        $jobs = '';
         $phone = '';
         $language = '';
-        $locaton = '';
+        $location = '';
         $city = '';
         $zip = '';
         $country = '';
         $about = '';
+        $facebook = '';
+        $twitter = '';
+        $instagram = '';
+        $linkedin = '';
 
         if(isset($company_data)) {
             $avatar = $company_data->avatar;
             $id = $company_data->user_id;
             $name = $user_name;
+            $jobs = $company_data->jobs;
             $phone = $company_data->phone_number;
             $language = $company_data->language;
             $location = $company_data->location;
@@ -83,11 +89,16 @@ class CompaniesController extends Controller
             $zip = $company_data->zip_code;
             $country = $company_data->country;
             $about = $company_data->about;
+            $facebook = $company_data->facebook;
+            $twitter = $company_data->twitter;
+            $instagram = $company_data->instagram;
+            $linkedin = $company_data->linkedin;
         }
 
         return view('pages\edit-profile')->with([
             'avatar' => $avatar,
             'id' => $id,
+            'jobs' => $jobs,
             'name' => $name,
             'phone' => $phone,
             'language' => $language,
@@ -95,12 +106,17 @@ class CompaniesController extends Controller
             'city' => $city,
             'zip' => $zip,
             'country' => $country,
-            'about' => $about
+            'about' => $about,
+            'facebook' => $facebook,
+            'twitter' => $twitter,
+            'instagram' => $instagram,
+            'linkedin' => $linkedin
         ]);
     }
 
     public function updateprofile(Request $request) {
 
+        $job = $request->jobs;
         $phone_number = $request->phone_number;
         $language = $request->language;
         $location = $request->location;
@@ -108,12 +124,17 @@ class CompaniesController extends Controller
         $zip_code = $request->zip_code;
         $country = $request->country;
         $about = $request->about;
+        $facebook = $request->facebook;
+        $twitter = $request->twitter;
+        $instagram = $request->instagram;
+        $linkedin = $request->linkedin;
 
         $registered_id = Auth::id();
         $user_id = Company::where('user_id', $registered_id)->first();
 
         if($user_id == null) {
             $res = Company::create([
+                'user_id' =>$registered_id,
                 'phone_number' => $phone_number,
                 'language' => $language,
                 'location' => $location,
@@ -121,10 +142,17 @@ class CompaniesController extends Controller
                 'zip_code' => $zip_code,
                 'country' => $country,
                 'about' => $about,
+                'jobs' => $job,
+                'facebook' => $facebook,
+                'twitter' => $twitter,
+                'linkedin' => $linkedin,
+                'instagram' => $instagram
             ]);
         }
         else {
             $res = Company::where('user_id', $registered_id)->update([
+                'user_id' =>$registered_id,
+                'jobs' => $job,
                 'phone_number' => $phone_number,
                 'language' => $language,
                 'location' => $location,
@@ -132,10 +160,17 @@ class CompaniesController extends Controller
                 'zip_code' => $zip_code,
                 'country' => $country,
                 'about' => $about,
+                'jobs' => $job,
+                'facebook' => $facebook,
+                'twitter' => $twitter,
+                'linkedin' => $linkedin,
+                'instagram' => $instagram
             ]);
         }
+
         if($res == 1) {
-            return response()->json(['data' => '1']);
+            $success = "1";
+            return response()->json(['data' => $success]);
         }
     }
 

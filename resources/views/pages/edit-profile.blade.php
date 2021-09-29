@@ -74,9 +74,14 @@
                               </div>
                             </div>
                           </div>
-                          
                         </div>
-                        
+
+                        <div class="col-sm-12 cl-md-12">
+                          <div class="form-group">
+                            <label class="form-label">Jobs</label>
+                            <input type="text" class="form-control" placeholder="{{$jobs}}" id="company_jobs">
+                          </div>
+                        </div>
                         <div class="col-sm-6 col-md-8">
                           <div class="form-group">
                             <label class="form-label">Phone number</label>
@@ -121,6 +126,7 @@
                           <div class="form-group">
                             <label class="form-label">Country</label>
                             <select class="form-control custom-select select2" id="company_country">
+                              <option value="0">{{$country}}</option>
                               <option value="1">Chile</option>
                               <option value="2">Canada</option>
                               <option value="3">United State</option>
@@ -132,6 +138,30 @@
                           <div class="form-group mb-0">
                             <label class="form-label">About Me</label>
                             <textarea rows="5" class="form-control" placeholder="{{$about}}" id="company_about"></textarea>
+                          </div>
+                        </div>
+                        <div class="col-lg-12 mt-4">
+                          <div class="form-group">
+                            <label class="form-label" style="color:#3c5a99">Facebook Link</label>
+                            <input type="text" class="form-control" placeholder="{{$facebook}}" id="company_facebook">
+                          </div>
+                        </div>
+                        <div class="col-lg-12 mt-4">
+                          <div class="form-group">
+                            <label class="form-label" style="color:#1da1f2">Twitter Link</label>
+                            <input type="text" class="form-control" placeholder="{{$twitter}}" id="company_twitter">
+                          </div>
+                        </div>
+                        <div class="col-lg-12 mt-4">
+                          <div class="form-group">
+                            <label class="form-label" style="color:#e4405f">Instagram Link</label>
+                            <input type="text" class="form-control" placeholder="{{$instagram}}" id="company_instagram">
+                          </div>
+                        </div>
+                        <div class="col-lg-12 mt-4">
+                          <div class="form-group">
+                            <label class="form-label" style="color:#0063dc">Linkedin Link</label>
+                            <input type="text" class="form-control" placeholder="{{$linkedin}}" id="company_linkedin">
                           </div>
                         </div>
                       </div>
@@ -320,7 +350,7 @@
       }
 
       function EditProfile() {
-        
+        let jobs = "";
         let phone = "";
         let language = "";
         let location = "";
@@ -328,7 +358,12 @@
         let code = "";
         let country = "";
         let about = "";
+        let facebook = "";
+        let twitter = "";
+        let instagram = "";
+        let linkedin = "";
 
+        jobs = $("#company_jobs").val();
         phone = $("#company_phone_num").val();
         language = $("#company_lang option:selected").text();
         location = $("#company_location").val();
@@ -336,6 +371,10 @@
         code = $("#company_code").val();
         country = $("#company_country option:selected").text();
         about = $("#company_about").val();
+        facebook = $("#company_facebook").val();
+        twitter = $("#company_twitter").val();
+        instagram = $("#company_instagram").val();
+        linkedin = $("#company_linkedin").val();
         
         $.ajaxSetup({
             headers: {
@@ -346,13 +385,18 @@
           url: '/dashboard/update-profile',
           method: 'post',
           data: {
+            job:jobs,
             phone_number: phone,
             language: language,
             location: location,
             city: city,
             zip_code: code,
             country: country,
-            about: about
+            about: about,
+            facebook: facebook,
+            twitter: twitter,
+            instagram: instagram,
+            linkedin: linkedin
           },
           dataType: false,
           success: function(data) {

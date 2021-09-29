@@ -10,6 +10,7 @@ class Company extends Model
         'id',
         'user_id',
         'avatar',
+        'jobs',
         'phone_number',
         'language',
         'location',
@@ -18,6 +19,10 @@ class Company extends Model
         'country',
         'about',
         'students',
+        'facebook',
+        'linkedin',
+        'twitter',
+        'instagram'
     ];
 
     public function Company_User() {

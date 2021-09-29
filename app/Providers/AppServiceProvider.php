@@ -30,8 +30,8 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function($view) {
             $user = \Auth::user();
-            $company = Company::where('user_id', $user->id)->first();
-            return $view->with(['logged_user'=>$user, 'company' => $company]);
+            // $company = Company::where('user_id', $user->id)->first();
+            return $view->with(['logged_user'=>$user]);
         });
     }
 }
