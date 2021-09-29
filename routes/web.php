@@ -53,6 +53,7 @@ Route::middleware(['auth'])->group(function(){
   Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('auth');
   Route::prefix('dashboard')->group(function($sub_route) {
     $sub_route->post('/save-avatar', 'CompaniesController@saveavatar');
+    $sub_route->post('/remove-avatar', 'CompaniesController@removeavatar');
     $sub_route->get('/edit-profile', 'CompaniesController@editprofile')->name('edit-profile');
     $sub_route->post('/update-profile', 'CompaniesController@updateprofile');
     $sub_route->get('/post-service', 'PostController@index')->name('post-service');

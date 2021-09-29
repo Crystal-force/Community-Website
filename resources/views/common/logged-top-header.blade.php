@@ -1,4 +1,4 @@
-<div class="col-xl-8 col-lg-8 col-sm-4 col-7">
+<div class="col-xl-6 col-lg-6 col-sm-4 col-7">
   <div class="top-bar-left d-flex">
       <div class="clearfix">
           <ul class="socials">
@@ -42,7 +42,7 @@
   </div>
 </div>
 
-<div class="col-xl-4 col-lg-4 col-sm-8 col-5">
+<div class="col-xl-6 col-lg-6 col-sm-8 col-5">
     <div class="top-bar-right">
         <ul class="custom">
             <li>

@@ -269,6 +269,21 @@
     color: white;
     margin-top: 0.5rem;
 }
+.remove-button {
+    border: solid 1px #ccc;
+    padding: 0.3rem 1.5rem;
+    border-radius: 30px;
+    background: #e72a1a;
+    border:solid 1px #e72a1a;
+    color: white;
+    margin-top: 0.5rem;
+}
 #profile_update_success {
+    display: none;
+}
+.alert-header-color {
+    color:red
+}
+#profile_remove_success {
     display: none;
 }

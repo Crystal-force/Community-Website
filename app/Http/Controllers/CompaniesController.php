@@ -19,7 +19,7 @@ class CompaniesController extends Controller
         return view('pages\companies-profile');
     }
 
-    function saveavatar(Request $request) {
+    public function saveavatar(Request $request) {
         $avatar = $request->avatar;  // your base64 encoded
         $base64_img = str_replace('data:image/png;base64,', '', $avatar);
         $image = str_replace(' ', '+', $base64_img);
@@ -46,6 +46,14 @@ class CompaniesController extends Controller
         }
     }
 
+    public function removeavatar(Request $request) {
+        $id = $request->id;
+        $res = Company::where('user_id', $id)->delete();
+        if($res == 1) {
+            return  response()->json(['data' => '1']);
+        }
+    }
+
 
 
     public function editprofile() {
@@ -53,21 +61,40 @@ class CompaniesController extends Controller
         $user_name = Auth::user()->name;
         $company_data = Company::where('user_id', $user_id)->first();
         
-        // if($company_data = 'null') {
-        //     $blank_avatar = '../assets/img/blank/blank.png';
-        //     return view('pages\edit-profile')->with([
-        //         'avatar' => $blank_avatar,
-        //         'name' => $user_name
-        //     ]);
-        // }
-        // else {
-            $com_avatar = $company_data->avatar;
-            return view('pages\edit-profile')->with([
-                'avatar' => $com_avatar,
-                'name' => $user_name
-            ]);
-        // }
-        
+        $avatar = '../assets/img/blank/blank.png';
+        $id = '';
+        $phone = '';
+        $language = '';
+        $locaton = '';
+        $city = '';
+        $zip = '';
+        $country = '';
+        $about = '';
+
+        if(isset($company_data)) {
+            $avatar = $company_data->avatar;
+            $id = $company_data->user_id;
+            $phone = $company_data->phone_number;
+            $language = $company_data->language;
+            $location = $company_data->location;
+            $city = $company_data->city;
+            $zip = $company_data->zip_code;
+            $country = $company_data->country;
+            $about = $company_data->about;
+        }
+
+        return view('pages\edit-profile')->with([
+            'avatar' => $avatar,
+            'name' => $user_name,
+            'id' => $id,
+            'phone' => $phone,
+            'language' => $language,
+            'location' => $location,
+            'city' => $city,
+            'zip' => $zip,
+            'country' => $country,
+            'about' => $about
+        ]);
     }
 
     public function updateprofile(Request $request) {
