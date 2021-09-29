@@ -126,7 +126,6 @@
                           <div class="form-group">
                             <label class="form-label">Country</label>
                             <select class="form-control custom-select select2" id="company_country">
-                              <option value="0">{{$country}}</option>
                               <option value="1">Chile</option>
                               <option value="2">Canada</option>
                               <option value="3">United State</option>
@@ -385,7 +384,7 @@
           url: '/dashboard/update-profile',
           method: 'post',
           data: {
-            job:jobs,
+            jobs:jobs,
             phone_number: phone,
             language: language,
             location: location,

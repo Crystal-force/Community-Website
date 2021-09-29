@@ -40,4 +40,7 @@ class User extends Authenticatable
     public function CompanyProfile() {
         return $this->hasMany('App\Http\Models\Company');
     }
+    public function Course() {
+        return $this->hasMany('App\Http\Models\Course');
+    }
 }

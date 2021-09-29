@@ -26,6 +26,6 @@ class Company extends Model
     ];
 
     public function Company_User() {
-        return $this->belongTo('App\Http\User', 'user-id');
+        return $this->belongTo('App\Http\User', 'user_id');
     }
 }

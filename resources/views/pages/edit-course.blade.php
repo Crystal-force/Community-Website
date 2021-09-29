@@ -41,9 +41,9 @@
 								<div class="profile-pic">
 									<div class="profile-pic-img">
 										<span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
-										<img src="123" class="brround" alt="user">
+										<img src="{{$avatar}}" class="brround" alt="user">
 									</div>
-									<a href="javascript:;" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">123</h4></a>
+									<a href="javascript:;" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">{{$name}}</h4></a>
 								</div>
 							</div>
 							@include('common\user-dashboard-left-menu')
@@ -189,7 +189,7 @@
 			</div>
 		</section>
 
-    <div class="modal fade" id="AddCourse" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal" id="AddCourse" tabindex="-1" role="dialog"  aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -200,11 +200,16 @@
           </div>
           <div class="modal-body">
             <form>
+							<div class="form-group">
+                <label for="recipient-name" class="form-control-label">Title:</label>
+                <input type="text" class="form-control" id="course_title">
+              </div>
               <div class="form-group">
+									<label class="form-label">Image:</label>
                   <input type="file" class="dropify" data-height="180" />
               </div>
               <div class="form-group edit-course-select-category">
-                <label class="form-label">Category</label>
+                <label class="form-label">Category: </label>
                 <select class="form-control custom-select select2 ">
                   <option value="0">--Select--</option>
                   <option value="1">Vehicles</option>
@@ -213,13 +218,18 @@
                   <option value="4">...</option>
                 </select>
               </div>
+              
               <div class="form-group">
-                <label for="recipient-name" class="form-control-label">Title:</label>
-                <input type="text" class="form-control" id="recipient-name">
+                <label for="recipient-name" class="form-control-label">Sub Title:</label>
+                <input type="text" class="form-control" id="course_sub_title">
               </div>
               <div class="form-group">
                 <label for="message-text" class="form-control-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
+                <textarea class="form-control" id="course_content"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="form-control-label">Price:</label>
+								<input type="text" class="form-control" id="course_price">
               </div>
             </form>
           </div>

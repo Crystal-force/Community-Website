@@ -128,13 +128,14 @@ class CompaniesController extends Controller
         $twitter = $request->twitter;
         $instagram = $request->instagram;
         $linkedin = $request->linkedin;
-
+      
         $registered_id = Auth::id();
         $user_id = Company::where('user_id', $registered_id)->first();
 
         if($user_id == null) {
             $res = Company::create([
                 'user_id' =>$registered_id,
+                'jobs' => $job,
                 'phone_number' => $phone_number,
                 'language' => $language,
                 'location' => $location,
@@ -142,7 +143,6 @@ class CompaniesController extends Controller
                 'zip_code' => $zip_code,
                 'country' => $country,
                 'about' => $about,
-                'jobs' => $job,
                 'facebook' => $facebook,
                 'twitter' => $twitter,
                 'linkedin' => $linkedin,
