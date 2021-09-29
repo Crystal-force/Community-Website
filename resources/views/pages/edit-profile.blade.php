@@ -1,9 +1,9 @@
 @extends('layout.index')
 @section('content')
 		<!--Loader-->
-		{{-- <div id="global-loader">
+		<div id="global-loader">
 			<img src="../assets/preloader/index.svg" class="loader-img " alt="">
-		</div> --}}
+		</div>
 
 		<div class="header-main">
       <div class="top-bar lg-top-bar">
@@ -57,6 +57,9 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="col-md-12">
+                          <div class="company-name">
+                            <h3 class="text-center">{{$logged_user->name}}</h3>
+                          </div>
                           <div class="upload-img-bar content-center text-center mb-5">
                             <img id="avatar-img" class="img-circle profile_img img-thumbnail" src="{{$avatar}}" width="150" alt="avatar">
                             <div class="d-flex justify-content-center">
@@ -71,17 +74,19 @@
                               </div>
                             </div>
                           </div>
+                          
                         </div>
-                        <div class="col-md-8">
+                        
+                        <div class="col-sm-6 col-md-8">
                           <div class="form-group">
-                            <label class="form-label">Name</label>
-                            <input type="text" class="form-control"  placeholder="{{$name}}" id="company_name">
+                            <label class="form-label">Phone number</label>
+                            <input type="text" class="form-control" placeholder="{{$phone}}" id="company_phone_num">
                           </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                           <div class="form-group">
-                            <label class="form-label">Phone number</label>
-                            <input type="text" class="form-control" placeholder="{{$phone}}" id="company_phone_num">
+                            <label class="form-label">Postal Code</label>
+                            <input type="number" class="form-control" placeholder="{{$zip}}" id="company_code">
                           </div>
                         </div>
                         <div class="col-sm-12 col-md-12">
@@ -106,19 +111,13 @@
                             <input type="text" class="form-control" placeholder="{{$location}}" id="company_location">
                           </div>
                         </div>
-                        <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-6 col-md-6">
                           <div class="form-group">
                             <label class="form-label">City</label>
                             <input type="text" class="form-control" placeholder="{{$city}}" id="company_city">
                           </div>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                          <div class="form-group">
-                            <label class="form-label">Postal Code</label>
-                            <input type="number" class="form-control" placeholder="{{$zip}}" id="company_code">
-                          </div>
-                        </div>
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                           <div class="form-group">
                             <label class="form-label">Country</label>
                             <select class="form-control custom-select select2" id="company_country">
@@ -322,7 +321,6 @@
 
       function EditProfile() {
         
-        let name = "";
         let phone = "";
         let language = "";
         let location = "";
@@ -331,7 +329,6 @@
         let country = "";
         let about = "";
 
-        name = $("#company_name").val();
         phone = $("#company_phone_num").val();
         language = $("#company_lang option:selected").text();
         location = $("#company_location").val();
@@ -349,7 +346,6 @@
           url: '/dashboard/update-profile',
           method: 'post',
           data: {
-            name: name,
             phone_number: phone,
             language: language,
             location: location,

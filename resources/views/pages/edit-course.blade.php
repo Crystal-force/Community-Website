@@ -41,9 +41,9 @@
 								<div class="profile-pic">
 									<div class="profile-pic-img">
 										<span class="bg-success dots" data-toggle="tooltip" data-placement="top" title="online"></span>
-										<img src="../assets/img/users/bu_logo_1.png" class="brround" alt="user">
+										<img src="{{$company->avatar}}" class="brround" alt="user">
 									</div>
-									<a href="javascript:;" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">Robert McLean</h4></a>
+									<a href="javascript:;" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">{{$logged_user->name}}</h4></a>
 								</div>
 							</div>
 							@include('common\user-dashboard-left-menu')

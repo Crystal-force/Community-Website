@@ -63,6 +63,7 @@ class CompaniesController extends Controller
         
         $avatar = '../assets/img/blank/blank.png';
         $id = '';
+        $name = '';
         $phone = '';
         $language = '';
         $locaton = '';
@@ -74,6 +75,7 @@ class CompaniesController extends Controller
         if(isset($company_data)) {
             $avatar = $company_data->avatar;
             $id = $company_data->user_id;
+            $name = $user_name;
             $phone = $company_data->phone_number;
             $language = $company_data->language;
             $location = $company_data->location;
@@ -85,8 +87,8 @@ class CompaniesController extends Controller
 
         return view('pages\edit-profile')->with([
             'avatar' => $avatar,
-            'name' => $user_name,
             'id' => $id,
+            'name' => $name,
             'phone' => $phone,
             'language' => $language,
             'location' => $location,
@@ -98,7 +100,7 @@ class CompaniesController extends Controller
     }
 
     public function updateprofile(Request $request) {
-        $name = $request->name;
+
         $phone_number = $request->phone_number;
         $language = $request->language;
         $location = $request->location;
@@ -112,7 +114,6 @@ class CompaniesController extends Controller
 
         if($user_id == null) {
             $res = Company::create([
-                'name' => $name,
                 'phone_number' => $phone_number,
                 'language' => $language,
                 'location' => $location,
@@ -124,7 +125,6 @@ class CompaniesController extends Controller
         }
         else {
             $res = Company::where('user_id', $registered_id)->update([
-                'name' => $name,
                 'phone_number' => $phone_number,
                 'language' => $language,
                 'location' => $location,
@@ -134,11 +134,6 @@ class CompaniesController extends Controller
                 'about' => $about,
             ]);
         }
-
-        $res = User::where('id', $registered_id)->update([
-            'name' => $name,
-        ]);
-
         if($res == 1) {
             return response()->json(['data' => '1']);
         }

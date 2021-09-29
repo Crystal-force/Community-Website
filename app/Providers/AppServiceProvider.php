@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Company;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,7 +30,8 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function($view) {
             $user = \Auth::user();
-            return $view->with(['logged_user'=>$user]);
+            $company = Company::where('user_id', $user->id)->first();
+            return $view->with(['logged_user'=>$user, 'company' => $company]);
         });
     }
 }

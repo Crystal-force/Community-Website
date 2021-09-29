@@ -9,7 +9,6 @@ class Company extends Model
     public $fillable = [
         'id',
         'user_id',
-        'name',
         'avatar',
         'phone_number',
         'language',
