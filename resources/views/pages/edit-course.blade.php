@@ -145,6 +145,7 @@
         </div>
     </section>
 
+		<!--Add Course Modal-->
     <div class="modal" id="AddCourse" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -230,7 +231,7 @@
         </div>
     </div>
 
-		
+		<!--Change course modal-->
     <div class="modal" id="EditCourse" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document" id="edit_course-modal">
             <div class="row mb-1 mt-1 d-flex justify-content-center">
@@ -250,6 +251,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+				// Add New Course --- File FormData Method
         $(document).ready(function(e) {
             $('#NewCourseUpload').on('submit', function(e) {
                 e.preventDefault();
@@ -317,7 +319,8 @@
                 });
             });
         });
-
+				
+				// Edit Course 
         function EditCourse(elem) {
             var course_id = $(elem).attr('data-id');
             $.ajaxSetup({
@@ -414,6 +417,7 @@
             });
         }
 
+				//  Change Course
         function ChangeCourse(elem) {
             var course_id = '';
             var user_id = '';
