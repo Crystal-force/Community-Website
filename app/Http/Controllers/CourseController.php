@@ -98,36 +98,20 @@ class CourseController extends Controller
     }
 
     public function changesavecourse(Request $request) {
-        $course_id = $request->input('course_id');
-        $user_id = $request->input('id');
-        $title = $request->input('title');
+        $data = $request->input();
+        unset($data['file']);
         $file = $request->file('file');
-        $category = $request->input('category');
-        $sub_title = $request->input('sub_title');
-        $content = $request->input('content');
-        $price = $request->input('price');
-        $facebook = $request->input('facebook');
-        $twitter = $request->input('twitter');
-        $instagram = $request->input('instagram');
-        $linkedin = $request->input('linkedin');
-
-        $originalfilename = str_replace(' ', '', $file->getClientOriginalName());
-        $fileName = md5(uniqid(rand(), true)).$originalfilename;
-        $path = $file->storeAs('/course/new', $fileName);
-        $db_link = '/storage'.'/'.$path;
+        $db_link = Course::where('id', $data['id'])->first()->image;
+        if(isset($file)) {
+            $originalfilename = str_replace(' ', '', $file->getClientOriginalName());
+            $fileName = md5(uniqid(rand(), true)).$originalfilename;
+            $path = $file->storeAs('/course/new', $fileName);
+            $db_link = '/storage'.'/'.$path;
+        }
         
-        $res = Course::where('id', $course_id)->update([
-                'title' => $title,
-                'image' => $db_link,
-                'category' => $category,
-                'facebook' => $facebook,
-                'linkedin' => $linkedin,
-                'twitter' => $twitter,
-                'instagram' => $instagram,
-                'sub_title' => $sub_title,
-                'content' => $content,
-                'price' => $price,
-        ]);
+        $data['image'] = $db_link;
+
+        $res = Course::where('id', $data['id'])->update($data);
 
         if($res == 1) {
             return response()->json(['data' => '1']);
