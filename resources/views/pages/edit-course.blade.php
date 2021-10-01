@@ -128,7 +128,7 @@
                                                                 data-toggle="tooltip" data-original-title="Delete"><i
                                                                     class="fa fa-trash-o"></i></a>
                                                             <a class="btn btn-primary btn-sm text-white"
-                                                                data-toggle="tooltip" data-original-title="View"><i
+																														data-toggle="modal" data-target="#ViewCourse" data-id="{{ $courses->id }}" onclick="ViewCourse(this)"><i
                                                                     class="fa fa-eye"></i></a>
                                                         </td>
                                                     </tr>
@@ -233,7 +233,7 @@
 
 		<!--Change course modal-->
     <div class="modal" id="EditCourse" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document" id="edit_course-modal">
+        <div class="modal-dialog modal-lg" role="document" id="edit_course_modal">
             <div class="row mb-1 mt-1 d-flex justify-content-center">
                 <div>
                     <div class="alert alert-success" role="alert" id="cange_course_success"><i
@@ -241,6 +241,13 @@
                         new course!</div>
                 </div>
             </div>
+        </div>
+    </div>
+
+		<!--View Course Modal-->
+		<div class="modal" id="ViewCourseModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document" id="view_course_modal">
+           
         </div>
     </div>
 
@@ -372,7 +379,7 @@
                         '</div>\n' +
                         '<div class="form-group">\n' +
                         '<label for="recipient-name" class="form-control-label" name="sub title">Sub Title:</label>\n' +
-                        '<input type="text" class="form-control" id="edit_course_sub_title" placeholder="' +
+                        '<input type="text" class="form-control" id="edit_course_sub_title" value="' +
                         data.data.sub_title + '">\n' +
                         '</div>\n' +
                         '<div class="form-group">\n' +
@@ -412,7 +419,7 @@
                         '</div>\n' +
                         '</form>\n' +
                         '</div>\n'
-                    $("#edit_course-modal").html(html_show);
+                    $("#edit_course_modal").html(html_show);
                 }
             });
         }
@@ -494,6 +501,103 @@
             });
 
         }
+
+				//  View Course
+				function ViewCourse(elem) {
+					var id = $(elem).attr('data-id');
+					
+					$.ajaxSetup({
+							headers: {
+									'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+							}
+					});
+					$.ajax({
+						url: '/dashboard/view-course',
+						method: 'post',
+						data: {
+							id: id
+						},
+						dataType: false,
+						success: function(data) {
+							console.log(data['1']);
+							$("#ViewCourseModal").modal('show');
+							var view_html = '';
+								view_html += 
+								'<div class="modal-content">\n'+
+									'<div class="modal-header">\n' +
+											'<h5 class="modal-title" id="example-Modal3">Edit Course</h5>\n' +
+											'<button type="button" class="close" data-dismiss="modal" aria-label="Close">\n' +
+											'<span aria-hidden="true">&times;</span>\n' +
+											'</button>\n' +
+                  '</div>\n' +
+
+									'<div class="modal-body">\n'+
+										'<form action="javascript:void(0)" enctype="multipart/form-data">\n'+
+											'<div class="form-group">\n'+
+												'<h4>'+data['1'].title+'</h4>\n'+
+												'<div class="form-group edit-course-select-category">\n'+
+													'<label class="form-label">Category: <span>'+data['1'].category+'</span></label>\n'+
+												'</div>\n'+
+
+												'<div class="d-flex">\n'+
+													'<ul class="d-flex mb-0">\n'+
+														'<li class="mr-5"><a href="#" class="icons"><i class="ti-calendar text-muted mr-1"></i> '+data['1'].updated_at+'</a></li>\n'+
+														'<li class="mr-5"><a href="#" class="icons"><i class="fa fa-user-o text-muted mr-1"></i> '+data['1'].customers+' customers</a></li>\n'+
+														'<li class="mr-5"><a href="#" class="icons"><i class="ti-eye text-muted mr-1 fs-15"></i> '+data['1'].visitors+'</a></li>\n'+
+													'</ul>\n'+
+													'<div class="rating-stars d-flex">\n'+
+														'<div class="rating-stars-container mr-2">\n'+
+															'<div class="rating-star sm">\n'+
+																'<i class="fa fa-heart"></i>\n'+
+															'</div>\n'+
+														'</div>'+data['1'].favorite+'\n'+
+													'</div>\n'+
+												'</div>\n'+
+											'</div>\n'+
+
+											'<div class="form-group course-view-price">\n'+
+													'<h2 class="">$ '+data['1'].price+'</h2>\n'+
+											'</div>\n'+
+
+											'<div class="form-group">\n'+
+													'<img src="'+data['1'].image+'" style="width:100%">\n'+
+											'</div>\n'+
+
+											'<div class="form-group">\n'+
+													'<h5>'+data['1'].sub_title+'</h5>\n'+
+											'</div>\n'+
+
+											'<div class="form-group">\n'+
+													'<p>'+data['1'].content+'</p>\n'+
+											'</div>\n'+
+
+											'<div class="form-group">\n'+
+													'<a href="#" style="color:#3c5a99">Facebook: <span>'+data['1'].facebook+'</span></a>\n'+
+											'</div>\n'+
+
+											'<div class="form-group">\n'+
+													'<a href="#" style="color:#1da1f2">Twitter: <span>'+data['1'].twitter+'</span></a>\n'+
+											'</div>\n'+
+
+											'<div class="form-group">\n'+
+													'<a href="#" style="color:#e4405f">Instagram: <span>'+data['1'].instagram+'</span></a>\n'+
+											'</div>\n'+
+
+											'<div class="form-group">\n'+
+													'<a href="#" style="color:#0063dc">Linkedin: <span>'+data['1'].linkedin+'</span></a>\n'+
+											'</div>\n'+
+
+											'<div class="modal-footer">\n'+
+													'<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>\n'+
+											'</div>\n'+
+										'</form>\n'+
+									'</div>\n'+
+								'</div>\n'
+								$("#view_course_modal").html(view_html);
+						}
+					});
+
+				}
     </script>
     <!-- Back to top -->
     <a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>

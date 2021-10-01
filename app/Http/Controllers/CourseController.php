@@ -93,7 +93,7 @@ class CourseController extends Controller
     public function changecourse(Request $request) {
         $course_id = $request->course_id;
         $course = Course::where('id', $course_id)->first();
-         
+        
         return response()->json(['data' => $course]);
     }
 
@@ -116,5 +116,13 @@ class CourseController extends Controller
         if($res == 1) {
             return response()->json(['data' => '1']);
         }
+    }
+
+    public function viewcourse(Request $request) {
+        $id = $request->id;
+
+        $course = Course::where('id', $id)->first();
+
+        return response()->json(['data', $course]);
     }
 }

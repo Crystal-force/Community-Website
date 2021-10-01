@@ -299,3 +299,13 @@
 #change_course_success {
     display: none;
 }
+.course-view-price {
+    display: flex;
+    justify-content: left;
+} 
+.course-view-price h2{
+    /* background: red;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 50px; */
+} 

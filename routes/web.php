@@ -71,6 +71,7 @@ Route::middleware(['auth'])->group(function(){
     $sub_route->post('/add-course', 'CourseController@addnewcourse');
     $sub_route->post('/edit-course', 'CourseController@changecourse');
     $sub_route->post('/change-course', 'CourseController@changesavecourse');
+    $sub_route->post('/view-course', 'CourseController@viewcourse');
     $sub_route->get('/edit-product', 'ProductController@editproduct')->name('edit-product');
     $sub_route->get('/user-list', 'UserController@userlist')->name('user-list');
     $sub_route->get('/account-setting', 'AccountController@accountsetting')->name('account-setting');
