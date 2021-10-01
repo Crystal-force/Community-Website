@@ -47,7 +47,7 @@
                                         <li class="mr-5"><a href="#" class="icons"><i
                                                     class="ti-calendar text-muted mr-1"></i> 5 hours ago</a></li>
                                         <li class="mr-5"><a href="#" class="icons"><i
-                                                    class="fa fa-thumbs-o-up text-muted mr-1"></i> 99% Positive
+                                                    class="fa fa-thumbs-o-up text-muted mr-1"></i> Positive
                                                 review(1.0k)</a></li>
                                         <li class="mr-5"><a href="#" class="icons"><i
                                                     class="fa fa-user-o text-muted mr-1"></i> 5601 customers</a></li>

@@ -36,39 +36,57 @@ class CourseController extends Controller
         
         $avatar = '../assets/img/blank/blank.png';
         
-        // $title = '';
-        // $image = '';
-        // $date = '';
-        // $category = '';
-        // $sub_title = '';
-        // $content = '';
-        // $customers = '';
-        // $favorite = '';
-        // $visitors = '';
-        // $price = '';
-        // $status = '';
 
         if(isset($company)) {
             $avatar = $company->avatar;
+        }  
+        
+        return view('pages\edit-course')->with([
+            'id' => $id,
+            'avatar' => $avatar,
+            'name' => $name,
+            'course' => $course,
+        ]);
+    }
+
+    public function addnewcourse(Request $request) {
+        $user_id = $request->input('id');
+        $title = $request->input('title');
+        $file = $request->file('file');
+        $category = $request->input('category');
+        $sub_title = $request->input('sub_title');
+        $content = $request->input('content');
+        $price = $request->input('price');
+        $facebook = $request->input('facebook');
+        $twitter = $request->input('twitter');
+        $instagram = $request->input('instagram');
+        $linkedin = $request->input('linkedin');
+
+        $fileName = md5(uniqid(rand(), true)).$file->getClientOriginalName();
+        $path = $file->storeAs('/course/new', $fileName);
+        $db_link = '/storage'.'/'.$path;
+        
+        if(!isset($title) || !isset($file) || !isset($category) || !isset($sub_title) || !isset($content) || !isset($price)) {
+            return response()->json(['data' => '0']);
         }
 
-        // if(isset($course)) {
-        //     $title = $course->title;
-        //     $image = $course->image;
-        //     $date = $course->updated_at;
-        //     $category = $course->category;
-        //     $sub_title = $course->sub_title;
-        //     $content = $course->content;
-        //     $customers = $course->customers;
-        //     $favorite = $course->favorite;
-        //     $visitors = $course->visitors;
-        //     $price = $course->price;
-        //     $status = $course->status;
-           
-        // }    
-        return view('pages\edit-course')->with([
-            'avatar' => $avatar,
-            'name' => $name
+        $res = Course::create([
+            'user_id' => $user_id,
+            'title' => $title,
+            'image' => $db_link,
+            'category' => $category,
+            'facebook' => $facebook,
+            'linkedin' => $linkedin,
+            'twitter' => $twitter,
+            'instagram' => $instagram,
+            'sub_title' => $sub_title,
+            'content' => $content,
+            'customers' => "",
+            'favorite' => "",
+            'visitors' => "",
+            'price' => $price,
+            'status' => ""
         ]);
+        dd($res);
     }
 }
