@@ -34,16 +34,14 @@ class CourseController extends Controller
         $name = Auth::user()->name;
         $course = Course::where('user_id', $id)->get();
         
-        $avatar = '../assets/img/blank/blank.png';
-        
-
-        if(isset($company)) {
-            $avatar = $company->avatar;
-        }  
+        // if(isset($company)) {
+        //     $course_img = $course['0']['image'];
+            
+        // }  
         
         return view('pages\edit-course')->with([
             'id' => $id,
-            'avatar' => $avatar,
+            'avatar' => $company->avatar,
             'name' => $name,
             'course' => $course,
         ]);
@@ -62,13 +60,14 @@ class CourseController extends Controller
         $instagram = $request->input('instagram');
         $linkedin = $request->input('linkedin');
 
-        $fileName = md5(uniqid(rand(), true)).$file->getClientOriginalName();
-        $path = $file->storeAs('/course/new', $fileName);
-        $db_link = '/storage'.'/'.$path;
-        
         if(!isset($title) || !isset($file) || !isset($category) || !isset($sub_title) || !isset($content) || !isset($price)) {
             return response()->json(['data' => '0']);
         }
+
+        $originalfilename = str_replace(' ', '', $file->getClientOriginalName());
+        $fileName = md5(uniqid(rand(), true)).$originalfilename;
+        $path = $file->storeAs('/course/new', $fileName);
+        $db_link = '/storage'.'/'.$path;
 
         $res = Course::create([
             'user_id' => $user_id,
@@ -81,12 +80,57 @@ class CourseController extends Controller
             'instagram' => $instagram,
             'sub_title' => $sub_title,
             'content' => $content,
-            'customers' => "",
-            'favorite' => "",
-            'visitors' => "",
+            'customers' => "0",
+            'favorite' => "0",
+            'visitors' => "0",
             'price' => $price,
-            'status' => ""
+            'status' => "0"
         ]);
-        dd($res);
+        
+        return response()->json(['data' => '1']);
+    }
+
+    public function changecourse(Request $request) {
+        $course_id = $request->course_id;
+        $course = Course::where('id', $course_id)->first();
+         
+        return response()->json(['data' => $course]);
+    }
+
+    public function changesavecourse(Request $request) {
+        $course_id = $request->input('course_id');
+        $user_id = $request->input('id');
+        $title = $request->input('title');
+        $file = $request->file('file');
+        $category = $request->input('category');
+        $sub_title = $request->input('sub_title');
+        $content = $request->input('content');
+        $price = $request->input('price');
+        $facebook = $request->input('facebook');
+        $twitter = $request->input('twitter');
+        $instagram = $request->input('instagram');
+        $linkedin = $request->input('linkedin');
+
+        $originalfilename = str_replace(' ', '', $file->getClientOriginalName());
+        $fileName = md5(uniqid(rand(), true)).$originalfilename;
+        $path = $file->storeAs('/course/new', $fileName);
+        $db_link = '/storage'.'/'.$path;
+        
+        $res = Course::where('id', $course_id)->update([
+                'title' => $title,
+                'image' => $db_link,
+                'category' => $category,
+                'facebook' => $facebook,
+                'linkedin' => $linkedin,
+                'twitter' => $twitter,
+                'instagram' => $instagram,
+                'sub_title' => $sub_title,
+                'content' => $content,
+                'price' => $price,
+        ]);
+
+        if($res == 1) {
+            return response()->json(['data' => '1']);
+        }
     }
 }
