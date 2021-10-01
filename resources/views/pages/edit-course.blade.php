@@ -50,6 +50,7 @@
 						</div>
 					</div>
 					<div class="col-xl-9 col-lg-12 col-md-12">
+						
 						<div class="card mb-0">
 							<div class="card-header">
 								<h3 class="card-title">Edit Course</h3>
@@ -89,7 +90,7 @@
 															<div class="media mt-0 mb-0">
 																<div class="card-aside-img">
 																	<a href="#"></a>
-																	<img src="../assets/images/media/h1.png" alt="img">
+																	<img src="{{$courses->image}}" alt="img">
 																</div>
 																<div class="media-body">
 																	<div class="card-item-desc ml-4 p-0 mt-2">
@@ -103,10 +104,14 @@
 														<td>{{$courses->category}}</td>
 														<td class="font-weight-semibold fs-16">{{$courses->price}}</td>
 														<td>
-															<a href="#" class="badge badge-success">{{$courses->status}}</a>
+															@if($courses->status == '0')
+															<a href="#" class="badge badge-success">Pending</a>
+															@elseif($courses->status == '1') 
+															<a href="#" class="badge badge-warning">Active</a>
+															@endif
 														</td>
 														<td>
-															<a class="btn btn-success btn-sm text-white" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+															<a class="btn btn-success btn-sm text-white" data-toggle="modal" data-id="{{$courses->id}}" onclick="EditCourse(this)"><i class="fa fa-pencil"></i></a>
 															<a class="btn btn-danger btn-sm text-white" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-trash-o"></i></a>
 															<a class="btn btn-primary btn-sm text-white" data-toggle="tooltip" data-original-title="View"><i class="fa fa-eye"></i></a>
 														</td>
@@ -133,6 +138,13 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+					<div class="row mb-1 mt-1 d-flex justify-content-center">
+						<div>
+							<div class="alert alert-success" role="alert" id="add_course_success"><i class="fa fa-check-circle-o mr-2" aria-hidden="true"></i> Well done! You successfully added new course!</div>
+							<div class="alert alert-warning" role="alert" id="blank_course_success"><i class="fa fa-exclamation mr-2" aria-hidden="true"></i> You must input the correct fields. Please confirm again!</div>
+							<div class="alert alert-secondary" role="alert" id="remove_course_success"><i class="fa fa-check-circle-o mr-2" aria-hidden="true"></i> You successfully removed selected course!</div>
+						</div>
+					</div>
           <div class="modal-body">
             <form id="NewCourseUpload" action="javascript:void(0)" enctype="multipart/form-data">
 							@csrf
@@ -185,13 +197,22 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-								{{-- <button type="button" class="btn btn-primary" data-id="{{$id}}" onclick="AddNewCourse(this)">Save Course</button> --}}
 								<button type="submit" class="btn btn-primary" data-id="{{$id}}" id="sub_button">Save Course</button>
 							</div>
             </form>
           </div>
           
         </div>
+      </div>
+    </div>
+
+		<div class="modal" id="EditCourse" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document" id="edit_course-modal">
+				<div class="row mb-1 mt-1 d-flex justify-content-center">
+					<div>
+						<div class="alert alert-success" role="alert" id="cange_course_success"><i class="fa fa-check-circle-o mr-2" aria-hidden="true"></i> Well done! You successfully changed new course!</div>
+					</div>
+				</div>
       </div>
     </div>
     
@@ -256,59 +277,177 @@
 							contentType: false,
 							processData: false,
 							success: function(data) {
-								console.log(data);
+								if(data.data == '1') {
+									$("#add_course_success").delay(5).fadeIn('slow').delay(1500).fadeOut('slow');
+									window.location.href = '/dashboard/edit-course'
+
+								}
+								else if(data.data == '0') {
+									$("#blank_course_success").delay(5).fadeIn('slow').delay(1500).fadeOut('slow');
+								}
 							}
 						});
 					});
 			});
-			
 
-			// function AddNewCourse(elem) {
-			// 	let id = '';
-			// 	let title = '';
-			// 	let file = '';
-			// 	let category = '';
-			// 	let sub_title = '';
-			// 	let content = '';
-			// 	let price = '';
-			// 	let facebook = '';
-			// 	let twitter = '';
-			// 	let instagram = '';
-			// 	let linkedin = '';
+			function EditCourse(elem) {
+				var course_id = $(elem).attr('data-id');
+				$.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
+				$.ajax({
+					url: '/dashboard/edit-course',
+					method: 'post',
+					data: {
+						course_id: course_id
+					},
+					dataType: false,
+					success: function(data) {
+						$("#EditCourse").modal('show');
+						var html_show = '';
+						html_show += 
+											'<div class="modal-content">\n'+
+												'<div class="row mt-1 mb-1  d-flex justify-content-center">\n'+
+													'<div class="alert alert-success" role="alert" id="change_course_success"><i class="fa fa-check-circle-o mr-2" aria-hidden="true"></i> Well done! You successfully changed new course!</div>\n'+
+												'</div>\n'+
+													'<div class="modal-header">\n'+
+													'<h5 class="modal-title" id="example-Modal3">Edit Course</h5>\n'+
+													'<button type="button" class="close" data-dismiss="modal" aria-label="Close">\n'+
+														'<span aria-hidden="true">&times;</span>\n'+
+													'</button>\n'+
+												'</div>\n'+
+												'<div class="modal-body">\n'+
+													'<form id="EditCourseUpload" action="javascript:void(0)" enctype="multipart/form-data">\n'+
+														'@csrf\n'+
+														'<div class="form-group">\n'+
+															'<label for="recipient-name" class="form-control-label">Title:</label>\n'+
+															'<input type="text" class="form-control" name="title" id="edit_course_title" placeholder="'+data.data.title+'">\n'+
+														'</div>\n'+
+														'<div class="form-group">\n'+
+															'<img src='+data.data.image+' style="width:10%">\n'+
+															'<label class="form-label">Image:</label>\n'+
+															'<input type="file" class="dropify fu" id="EditfileUploader" name="file" data-height="180"/>\n'+
+														'</div>\n'+
+														'<div class="form-group edit-course-select-category">\n'+
+															'<label class="form-label">Category: <span style="color:#0ab2e6">Selected: '+data.data.category+'</span></label>\n'+
+															'<select class="form-control custom-select select2 " id="edit_course_category" name="category">\n'+
+																'<option value="0">--Select--</option>\n'+
+																'<option value="1">Vehicles</option>\n'+
+																'<option value="2">CrusaderRecusandae</option>\n'+
+																'<option value="3">Caledonia</option>\n'+
+															'</select>\n'+
+														'</div>\n'+
+														'<div class="form-group">\n'+
+															'<label for="recipient-name" class="form-control-label" name="sub title">Sub Title:</label>\n'+
+															'<input type="text" class="form-control" id="edit_course_sub_title" placeholder="'+data.data.sub_title+'">\n'+
+														'</div>\n'+
+														'<div class="form-group">\n'+
+															'<label for="message-text" class="form-control-label">Content:</label>\n'+
+															'<textarea class="form-control" id="edit_course_content" rows="10" name="content" placeholder="'+data.data.content+'"></textarea>\n'+
+														'</div>\n'+
+														'<div class="form-group">\n'+
+															'<label for="message-text" class="form-control-label">Price:</label>\n'+
+															'<input type="text" class="form-control" name="price" id="edit_course_price" placeholder="'+data.data.price+'">\n'+
+														'</div>\n'+
+														'<div class="form-group">\n'+
+																'<label class="form-label" style="color:#3c5a99">Facebook Link</label>\n'+
+																'<input type="text" class="form-control" name="facebook" placeholder="'+data.data.facebook+'" id="edit_course_facebook">\n'+
+														'</div>\n'+
+														'<div class="form-group">\n'+
+																'<label class="form-label" style="color:#1da1f2">Twitter Link</label>\n'+
+																'<input type="text" class="form-control" name="twitter" placeholder="'+data.data.twitter+'" id="edit_course_twitter">\n'+
+														'</div>\n'+
+														'<div class="form-group">\n'+
+																'<label class="form-label" style="color:#e4405f">Instagram Link</label>\n'+
+																'<input type="text" class="form-control" name="instagram" placeholder="'+data.data.linkedin+'" id="edit_course_instagram">\n'+
+														'</div>\n'+
+														'<div class="form-group">\n'+
+																'<label class="form-label" style="color:#0063dc">Linkedin Link</label>\n'+
+																'<input type="text" class="form-control" name="linkedin" placeholder="'+data.data.linkedin+'" id="edit_course_linkedin">\n'+
+														'</div>\n'+
+														'<div class="modal-footer">\n'+
+																'<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>\n'+
+																'<button type="button" class="btn btn-primary" data-id="{{$id}}" id="sub_button" onclick="EditSaveCourse(this)" value="'+data.data.id+'">Save Course</button>\n'+
+														'</div>\n'+
+													'</form>\n'+
+												'</div>\n'
+						$("#edit_course-modal").html(html_show);	
+					}
+				});
+			}
 
-			// 	id = $(elem).attr('data-id');
-			// 	title = $("#course_title").val();
-			// 	file = $('#fileUploader').prop('files');
-			// 	category = $("#course_category option:selected").text();
-			// 	sub_title = $("#course_sub_title").val();
-			// 	content = $("#course_content").val();
-			// 	price = $("#course_price").val();
-			// 	facebook = $("#course_facebook").val();
-			// 	twitter = $("#course_twitter").val();
-			// 	instagram = $("#course_instagram").val();
-			// 	linkedin = $("#course_linkedin").val();
+			function EditSaveCourse(elem) {
+						var course_id = '';
+						var user_id = '';
+						var title = '';
+						var file = '';
+						var category = '';
+						var sub_title = '';
+						var content = '';
+						var price = '';
+						var facebook = '';
+						var twitter = '';
+						var instagram = '';
+						var linkedin = '';
 
-			// 	$("#FrmImgUpload").
+						course_id = $(elem).attr('value');
+						user_id = $("#sub_button").attr('data-id');
+						title =$("#edit_course_title").val();
+						file = $("#EditfileUploader")[0].files[0];
+						category = $("#edit_course_category option:selected").text();
+						sub_title = $("#edit_course_sub_title").val();
+						content = $("#edit_course_content").val();
+						price = $("#edit_course_price").val();
+						facebook = $("#edit_course_facebook").val();
+						twitter = $("#edit_course_twitter").val();
+						instagram = $("#edit_course_instagram").val();
+						linkedin = $("#edit_course_linkedin").val();
+						
+						console.log(title);
+						var formData = new FormData();
 
-			// 	$.ajaxSetup({
-			// 		headers: {
-			// 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-			// 		}
-			// 	});
-			// 	$.ajax({
-			// 		url: '/add-course',
-			// 		method: 'post',
-			// 		data: {
-			// 			id: id,
-			// 			title: title,
-			// 			// file: file
-			// 		},
-			// 		dataType: false,
-			// 		success: function(data) {
-			// 			console.log(data);
-			// 		}
-			// 	});
-			// }
+						formData.append('course_id', course_id);
+						formData.append('id', user_id);
+						formData.append('title', title);
+						formData.append('file', file);
+						formData.append('category', category);
+						formData.append('sub_title', sub_title);
+						formData.append('content', content);
+						formData.append('price', price);
+						formData.append('facebook', facebook);
+						formData.append('twitter', twitter);
+						formData.append('instagram', instagram);
+						formData.append('linkedin', linkedin);
+
+						$.ajaxSetup({
+							headers: {
+								'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+							}
+						});
+						$.ajax({
+							url: '/dashboard/change-course',
+							method:'post',
+							data: formData,
+							cache: false,
+							contentType: false,
+							processData: false,
+							success: function(data) {
+								if(data.data == '1') {
+									$("#change_course_success").delay(5).fadeIn('slow').delay(1000).fadeOut('slow');
+									setTimeout(function() {
+										window.location.href = '/dashboard/edit-course'
+    							}, 2000);
+
+								}
+								else if(data.data == '0') {
+									// $("#blank_course_success").delay(5).fadeIn('slow').delay(1500).fadeOut('slow');
+								}
+							}
+						});
+
+			}
     </script>
 		<!-- Back to top -->
 		<a href="#top" id="back-to-top" ><i class="fa fa-rocket"></i></a>

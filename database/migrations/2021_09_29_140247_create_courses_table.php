@@ -15,10 +15,10 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('title');
-            $table->string('image');
-            $table->string('category');
+            $table->integer('user_id')->nullable();
+            $table->string('title')->nullable();
+            $table->string('image')->nullable();
+            $table->string('category')->nullable();
             $table->string('facebook')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('twitter')->nullable();
@@ -28,8 +28,8 @@ class CreateCoursesTable extends Migration
             $table->string('customers')->nullble();
             $table->string('favorite')->nullable();
             $table->string('visitors')->nullable();
-            $table->string('price');
-            $table->string('status');
+            $table->string('price')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

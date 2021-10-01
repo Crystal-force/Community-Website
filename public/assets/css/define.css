@@ -287,3 +287,15 @@
 #profile_remove_success {
     display: none;
 }
+#add_course_success {
+    display: none;
+}
+#remove_course_success {
+    display: none;
+}
+#blank_course_success {
+    display: none;
+}
+#change_course_success {
+    display: none;
+}
